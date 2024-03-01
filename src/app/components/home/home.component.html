@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="header">
+    <img src="/assets/logoGoiasSead.png" alt="Logo do Governo de Goiás">
+  </div>
+  <h2 class="title">CADASTRAR CONCURSO</h2>
+  <div class="inputs">
+    <div class="input-group">
+      <label for="demandante">Demandante</label>
+      <input type="text" pInputText id="demandante" name="demandante" [(ngModel)]="demandante">
+    </div>
+    <div class="input-group">
+      <label for="concurso">Concurso</label>
+      <input type="text" pInputText id="concurso" name="concurso" [(ngModel)]="concurso">
+    </div>
+    <div class="input-group">
+      <label for="dataHomologacao">Data Homologação</label>
+      <input type="text" pInputText id="dataHomologacao" name="dataHomologacao" [(ngModel)]="dataHomologacao">
+    </div>
+    <div class="input-group">
+      <label for="validade">Validade (Meses)</label>
+      <input type="text" pInputText id="validade" name="validade" [(ngModel)]="validade">
+    </div>
+
+    <div class="checkbox">
+      <div class="checkbox">
+        <div class="ui-g checkbox-group">
+          <div>
+            <p>Regionalizado</p>
+            <p-checkbox name="group1" value="Option 1" label="Sim"></p-checkbox>
+            <p-checkbox name="group1" value="Option 1" label="Não"></p-checkbox>
+          </div>
+          <div>
+            <p>Vagas Sexo</p>
+            <p-checkbox name="group1" value="Option 2" label="Sim"></p-checkbox>
+            <p-checkbox name="group1" value="Option 2" label="Não"></p-checkbox>
+          </div>
+          <div>
+            <p>Reclass. até</p>
+            <p-checkbox name="group1" value="Option 3" label="Não Permitido"></p-checkbox>
+            <p-checkbox name="group1" value="Option 3" label="Convocação"></p-checkbox>
+            <p-checkbox name="group1" value="Option 3" label="Nomeação"></p-checkbox>
+          </div>
+          <div>
+            <p>Lista PCD</p>
+            <p-checkbox name="group1" value="Option 4" label="Geral"></p-checkbox>
+            <p-checkbox name="group1" value="Option 4" label="Separada"></p-checkbox>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+     <!-- No seu componente HTML -->
+     <p-table [value]="cars">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Cargo</th>
+          <th>Especialidade</th>
+          <th>Especialidade</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-car>
+        <tr>
+          <td>{{car.cargo}}</td>
+          <td>{{car.especialidade}}</td>
+          <td>{{car.especialidade}}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+
+
+    </div>
+
+    <button class="buton" pButton type="button" label="Salvar" ></button>
+    <button class="buton" pButton type="button" label="Voltar" ></button>
+  </div>
+
+

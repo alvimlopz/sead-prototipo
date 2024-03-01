@@ -1,1 +1,104 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("../node_modules/primeicons/primeicons.css");
+@import url("../node_modules/primeng/resources/primeng.min.css");
+@import url("../node_modules/primeng/resources/themes/saga-blue/theme.css");
+
+
+.container {
+  width: 80%; /* Define a largura do container */
+  margin: 0 auto; /* Centraliza o container na página */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header img {
+  margin-left: 20px;
+}
+
+.linha-form {
+  display: flex;
+  align-items: center; /* Centraliza verticalmente os elementos */
+  margin-bottom: 20px; /* Adiciona espaço entre as linhas */
+}
+
+.linha-form label {
+  width: 150px; /* Largura fixa para os rótulos */
+  margin-right: 10px; /* Adiciona espaço entre os rótulos e os campos de entrada */
+}
+
+input {
+  flex: 1; /* Ocupa todo o espaço disponível */
+  width: 190px;
+
+  justify-content: center;
+}
+
+.inputs {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 20px;
+}
+
+.input-group {
+  width: 80%;
+  width: calc(25% - 20px); /* Define a largura de cada grupo de input */
+  margin-right: 20px; /* Adiciona margem à direita para espaçamento entre os grupos */
+  margin-bottom: 20px; /* Adiciona margem na parte inferior para espaçamento entre os grupos */
+}
+
+.input-group label {
+  display: block; /* Torne os labels em bloco para que fiquem acima dos inputs */
+  margin-bottom: 5px; /* Adicione margem na parte inferior dos labels para espaçamento */
+}
+
+.checkbox-group p-checkbox {
+  margin-right: 80px; /* Adicione margem à direita para espaçamento entre os checkboxes */
+}
+
+.checkbox-group {
+  display: flex; /* Use flexbox para organizar os checkboxes dentro de cada grupo */
+  width: calc(50% - 10px); /* Define a largura de cada grupo de checkboxes (metade da largura total com margem entre os grupos) */
+  margin-right: 10px; /* Adicione margem à direita para espaçamento entre os grupos */
+  margin-bottom: 10px; /* Adicione margem na parte inferior para espaçamento entre os grupos */
+}
+
+.checkbox {
+  display: flex; /* Use flexbox para organizar os grupos de checkboxes */
+  flex-wrap: wrap; /* Permitir que os grupos quebrem para a próxima linha se não houver espaço suficiente */
+  margin-bottom: 20px;
+}
+
+/* CSS para a tabela */
+th, td {
+  padding: 8px; /* Adicione preenchimento interno para as células */
+  text-align: left; /* Alinhe o texto à esquerda */
+}
+
+th {
+  background-color: #a8a0a0; /* Cor de fundo para cabeçalhos */
+}
+
+/* Defina a largura das colunas */
+th:first-child, td:first-child {
+  width: 50%; /* Largura da primeira coluna */
+}
+
+th:last-child, td:last-child {
+  width: 50%; /* Largura da segunda coluna */
+}
+
+/* Adicione margens entre as colunas */
+td:first-child {
+  margin-right: 50px; /* Margem à direita para separar as colunas */
+}
+
+table {
+  border-collapse: initial;
+  border-spacing: 5px; /* Espaçamento entre as células */
+}
+
+
+
