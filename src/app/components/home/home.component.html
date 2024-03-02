@@ -9,7 +9,9 @@
   <div class="inputs">
     <div class="input-group">
       <label for="demandante">Demandante</label>
-      <input type="text" pInputText id="demandante" name="demandante" [(ngModel)]="demandante">
+      <div class="card flex justify-content-center">
+        <p-dropdown [options]="demandantes" [showClear]="true" [(ngModel)]="selectedDemandante" optionLabel="demandante"></p-dropdown>
+    </div>
     </div>
     <div class="input-group">
       <label for="concurso">Concurso</label>
@@ -17,20 +19,30 @@
     </div>
     <div class="input-group">
       <label for="dataHomologacao">Data Homologação</label>
-      <input type="text" pInputText id="dataHomologacao" name="dataHomologacao" [(ngModel)]="dataHomologacao">
+      <p-calendar [(ngModel)]="dataHomologacao"></p-calendar>
     </div>
     <div class="input-group">
       <label for="validade">Validade (Meses)</label>
-      <input type="text" pInputText id="validade" name="validade" [(ngModel)]="validade">
-    </div>
+      <input type="number" pInputText id="validade" name="validade" [(ngModel)]="validade" min="1" max="12" required>
+      <div *ngIf="isInvalidInput()">
+          <small>
+              Valor deve estar entre 1 e 12.
+          </small>
+      </div>
+  </div>
+  </div>
+
 
     <div class="checkbox">
       <div class="checkbox">
         <div class="ui-g checkbox-group">
           <div>
             <p>Regionalizado</p>
-            <p-checkbox name="group1" value="Option 1" label="Sim"></p-checkbox>
-            <p-checkbox name="group1" value="Option 1" label="Não"></p-checkbox>
+
+            <p-checkboxGroup name="regionalizado" [(ngModel)]="selectedValue">
+              <p-checkbox name="group1" value="sim" label="Sim" [(ngModel)]="regionalizado" (change)="onCheckboxChange('sim')"></p-checkbox>
+              <p-checkbox name="group1" value="nao" label="Não" [(ngModel)]="regionalizado" (change)="onCheckboxChange('nao')"></p-checkbox>
+            </p-checkboxGroup>
           </div>
           <div>
             <p>Vagas Sexo</p>
@@ -53,7 +65,7 @@
     </div>
     <div class="p-table">
       <button class="butonADD" pButton type="button" label="Adicionar" (click)="adicionarLinha()"></button>
-      <p-table class="p-table" [value]="vagas" [columns]="cols" [paginator]="true" [rows]="10">
+      <p-table class="p-table" [value]="vagas" [columns]="cols" [scrollable]="true" scrollHeight="400px" [resizableColumns]="true"  styleClass="p-datatable-gridlines" [paginator]="true" [rows]="10" [tableStyle]="{'min-width': '50rem'}">
         <ng-template class="linhas" pTemplate="header">
           <tr class="linhas">
             <th  class="linhas" class="cargo">Cargo</th>
@@ -72,10 +84,10 @@
             <th class="totalCR">Total</th>
           </tr>
         </ng-template>
-        <ng-template class="linhas" pTemplate="body" let-vaga let-i="rowIndex">
+        <ng-template  pTemplate="body" let-vaga let-i="rowIndex">
           <tr>
             <td class="cargo">
-              <input type="text" [(ngModel)]="vagas[i].cargo">
+              <input class="input" type="text" [(ngModel)]="vagas[i].cargo">
             </td>
             <td class="especialidade">
               <input type="text" [(ngModel)]="vagas[i].especialidade">
@@ -100,7 +112,7 @@
             </td>
             <td>
               <div class="icons-container">
-                <button style="margin-right: 10px;" pButton icon="pi pi-pencil edit-icon" (click)="editRow(i)" class="p-button-primary"></button>
+               <!--  <button style="margin-right: 10px;" pButton icon="pi pi-pencil edit-icon" (click)="editRow(i)" class="p-button-primary"></button> -->
                 <button pButton icon="pi pi-trash delete-icon" (click)="deleteRow(i)" class="p-button-danger"></button>
               </div>
             </td>
@@ -116,6 +128,6 @@
 
 
 
-  </div>
+
 
 

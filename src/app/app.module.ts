@@ -13,6 +13,8 @@ import {DropdownModule} from 'primeng/dropdown';
 import {CalendarModule} from 'primeng/calendar';
 import {CheckboxModule} from 'primeng/checkbox';
 import {TableModule} from 'primeng/table';
+import {SpinnerModule} from 'primeng/spinner';
+
 
 
 
@@ -30,7 +32,8 @@ import {TableModule} from 'primeng/table';
     DropdownModule,
     CalendarModule,
     CheckboxModule,
-    TableModule
+    TableModule,
+    SpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

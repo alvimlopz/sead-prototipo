@@ -4,6 +4,25 @@
   margin-bottom: 20px;
   display: flex;
   height: 19vh;
+  padding: 20px;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0;
+}
+
+
+.header img {
+  width: 100px; /* Ajuste o tamanho do logo conforme necessário */
+}
+
+.header-text {
+  text-align: right; /* Alinha o texto à direita */
+  margin-right: 80px; /* Adiciona margem à direita para espaçamento */
+  font-weight: bold; /* Define o texto em negrito */
+}
+
+.header-text span {
+  font-size: 18px; /* Tamanho da fonte */
 }
 
 .main-content {
@@ -46,13 +65,13 @@
 }
 
 th{
-  background-color: #b4c8d8;
+  background-color: #e2e2e2;
 }
 
 td,
 th {
   border: 1px solid #9e9e9e;
- width: 1%;
+ width: 10%;
 }
 
 th,
@@ -60,6 +79,7 @@ td {
   padding: 8px; /* Ajustando o padding das células */
   font-size: 14px; /* Ajustando o tamanho da fonte */
   width: 1%;
+  width: 10%; /* Definindo uma largura de 10% para as células de dados */
 }
 
 .cargo,
@@ -89,6 +109,9 @@ p-paginator {
   margin-top: 2px;
 }
 
+.custom-dropdown {
+  width: 300px; /* Defina o tamanho desejado */
+}
 
 /* Adicionando estilo para o ícone de exclusão */
 .delete-icon {
@@ -147,6 +170,22 @@ p-paginator {
   width: 10%;
 
 }
+
+.custom-spinner .ui-spinner-input {
+  width: 60px; /* Defina a largura desejada para o campo de entrada */
+  height: 300px; /* Defina a altura desejada para o campo de entrada */
+  font-size: 18px; /* Defina o tamanho da fonte desejado */
+  padding: 40px; /* Adicione preenchimento interno */
+  border: 100px solid #ced4da; /* Adicione uma borda */
+  border-radius: 400px; /* Adicione bordas arredondadas */
+}
+
+.custom-spinner .ui-spinner-button {
+  width: 300px; /* Defina a largura desejada para os botões de incremento e decremento */
+  height: 30px; /* Defina a altura desejada para os botões de incremento e decremento */
+  font-size: 14px; /* Defina o tamanho da fonte desejado para os botões de incremento e decremento */
+}
+
 
 .totalVI,
 .totalCR {
