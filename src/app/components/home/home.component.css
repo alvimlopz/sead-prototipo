@@ -1,18 +1,18 @@
-.container {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-}
 
 .header {
   background-color: #b4c8d8;
-  padding: 80px;
+  margin-bottom: 20px;
+  display: flex;
+  height: 19vh;
+}
+
+.main-content {
+  padding: 10px;
 }
 
 .header img {
   float: right;
+  max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
   width: 500px;
   height: auto;
   margin-left: 20px;
@@ -21,6 +21,7 @@
 .title {
   text-align: left;
   padding: 15px;
+  padding: 1%; /* Alterado para uma unidade relativa */
 }
 
 .botoes {
@@ -44,78 +45,45 @@
   margin-bottom: 10px;
 }
 
-.table-container {
-  width: 100%;
-  overflow: auto;
-}
-
-.table {
-  width: 10%;
-  border-collapse: collapse;
+th{
+  background-color: #b4c8d8;
 }
 
 td,
 th {
-  border: 2px solid #ddd;
-  padding: 10px; /* Ajustado o padding para um valor mais adequado */
-  text-align: left;
+  border: 1px solid #9e9e9e;
+ width: 1%;
 }
 
-th {
-  background-color: #f5f5f5;
+th,
+td {
+  padding: 8px; /* Ajustando o padding das células */
+  font-size: 14px; /* Ajustando o tamanho da fonte */
+  width: 1%;
 }
 
+.cargo,
 .especialidade {
-  width: 15%;
+  width: 15%; /* Definindo a largura das colunas Cargo e Especialidade */
 }
 
-.amplaVI{
-  width: 5%;
-}
-
-.pcdVI {
-  width: 4%;
-}
-
-.totalVI {
-  width: 4%;
-}
-
-
+.amplaVI,
+.pcdVI,
+.totalVI,
+.amplaCR,
+.pcdCR,
 .totalCR {
-  width: 4%;
-  padding: 3%;
+  width: 2%;
 }
 
-.pcdCR{
-  width: 4%;
+
+.butonADD{
+  font-size: 12px; /* Tamanho da fonte */
+
+  width: 100px; /* Defina o tamanho desejado */
+  height: 30px; /* Defina a altura desejada */
 }
 
-.amplaCR{
-  width: 5%;
-}
-
-.cargo {
-  width: 15%;
-}
-
-h2 {
-  text-align: center;
-}
-
-p-table {
-  width: auto;
-  border: 1px solid #ddd;
-  margin-top: 2px;
-  border-collapse: collapse;
-
-}
-
-p-table th,
-p-table td {
-  padding: 2px;
-  border-collapse: collapse;
-}
 
 p-paginator {
   margin-top: 2px;
@@ -161,9 +129,6 @@ p-paginator {
   margin-left: 10px;
 }
 
-.main-content {
-  padding: 10px;
-}
 
 .demandante,
 .concurso,
@@ -172,53 +137,26 @@ p-paginator {
   margin-bottom: 10px;
 }
 
-.table-container {
-  width: 100%;
-  overflow: auto;
-}
-
-.table {
-  width: 10%;
-  border-collapse: collapse;
-}
-
-td,
-th {
-  border: 2px solid #ddd;
-  padding: 10px; /* Ajustado o padding para um valor mais adequado */
-  text-align: left;
-}
-
-th {
-  background-color: #f5f5f5;
-}
-
-.containerTable {
-  width: 1500px;
-  margin: 0 auto;
-}
-
 h2 {
   text-align: center;
 }
 
-p-table {
-  width: 100%;
-  border: 1px solid #ddd;
-}
 
-p-table th,
-p-table td {
-  padding: 5px;
-}
 
 p-paginator {
-  margin-top: 5px;
+  width: 10%;
+
 }
 
 .totalVI,
 .totalCR {
   text-align: right;
+}
+
+.containerTable {
+  width: 8%;
+  height: 8px;
+  color: red;
 }
 
 

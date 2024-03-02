@@ -1,6 +1,9 @@
 <div class="container">
   <div class="header">
     <img src="/assets/logoGoiasSead.png" alt="Logo do Governo de Goiás">
+    <div class="header-text">
+      <span>SNP - Sistema Digital de Nomeação e Posse</span>
+    </div>
   </div>
   <h2 class="title">CADASTRAR CONCURSO</h2>
   <div class="inputs">
@@ -48,11 +51,12 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <p-table [value]="vagas" [columns]="cols" [paginator]="true" [rows]="10">
-        <ng-template pTemplate="header">
-          <tr>
-            <th class="cargo">Cargo</th>
+    <div class="p-table">
+      <button class="butonADD" pButton type="button" label="Adicionar" (click)="adicionarLinha()"></button>
+      <p-table class="p-table" [value]="vagas" [columns]="cols" [paginator]="true" [rows]="10">
+        <ng-template class="linhas" pTemplate="header">
+          <tr class="linhas">
+            <th  class="linhas" class="cargo">Cargo</th>
             <th class="especialidade">Especialidade</th>
             <th class="tituloVI" colspan="3">Vagas Imediatas</th>
             <th class="tituloCR" colspan="3">Vagas CR</th>
@@ -68,16 +72,32 @@
             <th class="totalCR">Total</th>
           </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-vaga let-i="rowIndex">
+        <ng-template class="linhas" pTemplate="body" let-vaga let-i="rowIndex">
           <tr>
-            <td class="cargo">{{vaga.cargo}}</td>
-            <td class="especialidade">{{vaga.especialidade}}</td>
-            <td class="amplaVI">{{vaga.amplaVI}}</td>
-            <td class="pcdVI">{{vaga.pcd}}</td>
-            <td class="totalVI">{{vaga.total}}</td>
-            <td class="amplaCR">{{vaga.amplaCR}}</td>
-            <td class="pcdCR">{{vaga.pcdCR}}</td>
-            <td class="totalCR">{{vaga.totalCR}}</td>
+            <td class="cargo">
+              <input type="text" [(ngModel)]="vagas[i].cargo">
+            </td>
+            <td class="especialidade">
+              <input type="text" [(ngModel)]="vagas[i].especialidade">
+            </td>
+            <td class="amplaVI">
+              <input type="text" [(ngModel)]="vagas[i].amplaVI">
+            </td>
+            <td class="pcdVI">
+              <input type="text" [(ngModel)]="vagas[i].pcdVI">
+            </td>
+            <td class="totalVI">
+              <input type="text" [(ngModel)]="vagas[i].totalVI">
+            </td>
+            <td class="amplaCR">
+              <input type="text" [(ngModel)]="vagas[i].amplaCR">
+            </td>
+            <td class="pcdCR">
+              <input type="text" [(ngModel)]="vagas[i].pcdCR">
+            </td>
+            <td class="totalCR">
+              <input type="text" [(ngModel)]="vagas[i].totalCR">
+            </td>
             <td>
               <div class="icons-container">
                 <button style="margin-right: 10px;" pButton icon="pi pi-pencil edit-icon" (click)="editRow(i)" class="p-button-primary"></button>
@@ -88,9 +108,7 @@
         </ng-template>
       </p-table>
     </div>
-
     </div>
-
     <div class="botoes">
       <button class="buton" pButton type="button" label="Voltar"></button>
       <button class="buton" pButton type="button" label="Salvar"></button>

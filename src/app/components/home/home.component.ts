@@ -10,6 +10,7 @@ import { PrimeNGConfig } from 'primeng/api';
 
 
 export class HomeComponent {
+
 editRow(_t85: any) {
 throw new Error('Method not implemented.');
 }
@@ -63,7 +64,18 @@ cols: any[] = [
   { field: 'totalCR', header: 'Total (CR)' }
 ];
 
-
+adicionarLinha() {
+  this.vagas.push({
+    cargo: '',
+    especialidade: '',
+    amplaVI: null,
+    pcdVI: null,
+    total: null,
+    amplaCR: null,
+    pcdCR: null,
+    totalCR: null
+  });
+}
 
 concurso: any;
 demandante: any;
