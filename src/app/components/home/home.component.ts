@@ -10,6 +10,12 @@ import { PrimeNGConfig } from 'primeng/api';
 
 
 export class HomeComponent {
+editRow(_t85: any) {
+throw new Error('Method not implemented.');
+}
+deleteRow(_t85: any) {
+throw new Error('Method not implemented.');
+}
 
  data: ListTable[] | undefined;
 
@@ -17,8 +23,8 @@ export class HomeComponent {
   {
     cargo: 'Analista de Gest. Governamental',
     especialidade: 'Téc. da Informação',
-    ampla: 30,
-    pcd: 2,
+    amplaVI: 30,
+    pcdVI: 2,
     total: 32,
     amplaCR: 32,
     pcdCR: 2,
@@ -27,7 +33,7 @@ export class HomeComponent {
   {
     cargo: 'Analista de Gest. Governamental',
     especialidade: 'Engenharia Civil',
-    ampla: 40,
+    amplaVI: 40,
     pcd: 4,
     total: 44,
     amplaCR: 21,
@@ -37,7 +43,7 @@ export class HomeComponent {
   {
     cargo: 'Gestor Governamental',
     especialidade: 'Direito',
-    ampla: 35,
+    amplaVI: 35,
     pcd: 1,
     total: 36,
     amplaCR: 15,

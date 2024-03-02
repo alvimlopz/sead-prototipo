@@ -48,35 +48,46 @@
         </div>
       </div>
     </div>
-    <div class="containerTable">
-
+    <div class="container">
       <p-table [value]="vagas" [columns]="cols" [paginator]="true" [rows]="10">
         <ng-template pTemplate="header">
           <tr>
-            <th>Cargo</th>
-            <th>Especialidade</th>
-            <th colspan="2">Ampla</th>
-            <th colspan="2">PCD</th>
-            <th colspan="2">Total</th>
+            <th class="cargo">Cargo</th>
+            <th class="especialidade">Especialidade</th>
+            <th class="tituloVI" colspan="3">Vagas Imediatas</th>
+            <th class="tituloCR" colspan="3">Vagas CR</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th></th>
+            <th class="amplaVI">Ampla</th>
+            <th class="pcdVI">PCD</th>
+            <th class="totalVI">Total</th>
+            <th class="amplaCR">Ampla (CR)</th>
+            <th class="pcdCR">PCD (CR)</th>
+            <th class="totalCR">Total (CR)</th>
           </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-vaga>
+        <ng-template pTemplate="body" let-vaga let-i="rowIndex">
           <tr>
-            <td>{{vaga.cargo}}</td>
-            <td>{{vaga.especialidade}}</td>
-            <td>{{vaga.ampla}}</td>
-            <td>{{vaga.pcd}}</td>
-            <td>{{vaga.total}}</td>
-            <td>{{vaga.amplaCR}}</td>
-            <td>{{vaga.pcdCR}}</td>
-            <td>{{vaga.totalCR}}</td>
+            <td class="cargo">{{vaga.cargo}}</td>
+            <td class="especialidade">{{vaga.especialidade}}</td>
+            <td class="amplaVI">{{vaga.amplaVI}}</td>
+            <td class="pcdVI">{{vaga.pcdVI}}</td>
+            <td class="totalVI">{{vaga.totalVI}}</td>
+            <td class="amplaCR">{{vaga.amplaCR}}</td>
+            <td class="pcdCR">{{vaga.pcdCR}}</td>
+            <td class="totalCR">{{vaga.totalCR}}</td>
+            <td>
+              <div class="icons-container">
+                <button style="margin-right: 10px;" pButton icon="pi pi-pencil edit-icon" (click)="editRow(i)" class="p-button-primary"></button>
+                <button pButton icon="pi pi-trash delete-icon" (click)="deleteRow(i)" class="p-button-danger"></button>
+              </div>
+            </td>
           </tr>
         </ng-template>
       </p-table>
     </div>
-
-
-
 
     </div>
 

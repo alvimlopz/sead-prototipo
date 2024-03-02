@@ -1,7 +1,7 @@
 .container {
   width: 100%;
   height: 100%;
-  display: contents;
+  display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
 }
@@ -23,17 +23,14 @@
   padding: 15px;
 }
 
-.header h1 {
-  margin: 10;
-}
-
 .botoes {
+  text-align: right;
   margin-top: 10px;
 }
 
 .buton {
-  padding: 10px 20px; /* Espaçamento interno */
-  margin-left: 10px; /* Espaçamento entre os botões */
+  padding: 10px 20px;
+  margin-left: 10px;
 }
 
 .main-content {
@@ -53,28 +50,19 @@
 }
 
 .table {
-  width: 100%;
+  width: 10%;
   border-collapse: collapse;
 }
 
 td,
 th {
-  border: 1px solid #ddd;
-  padding: 5px;
-  text-align: center;
+  border: 2px solid #ddd;
+  padding: 10px; /* Ajustado o padding para um valor mais adequado */
+  text-align: left;
 }
 
 th {
   background-color: #f5f5f5;
-}
-
-.botoes {
-  text-align: right;
-  margin-top: 10px;
-}
-
-.btn {
-  margin-left: 10px;
 }
 
 .containerTable {
@@ -93,9 +81,177 @@ p-table {
 
 p-table th,
 p-table td {
-  padding: 3px;
+  padding: 5px;
 }
 
 p-paginator {
   margin-top: 5px;
+}
+
+.totalVI,
+.totalCR {
+  text-align: right;
+}
+
+.cargo {
+  width: 150px;
+  text-align: left;
+  padding-right: 100px;
+}
+
+.especialidade {
+  width: 180px;
+  text-align: left;
+  padding-right: 100px;
+}
+
+.ampla,
+.amplaCR,
+.totalVI,
+.totalCR,
+.pcdVI,
+.pcdCR {
+  width: 2%;
+  text-align: left;
+}
+
+/* Adicionando estilo para o ícone de exclusão */
+.delete-icon {
+  font-size: 1.5rem; /* Tamanho do ícone */
+  color: red; /* Cor do ícone */
+  .container {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.header {
+  background-color: #b4c8d8;
+  padding: 80px;
+}
+
+.header img {
+  float: right;
+  width: 500px;
+  height: auto;
+  margin-left: 20px;
+}
+
+.title {
+  text-align: left;
+  padding: 15px;
+}
+
+.botoes {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.buton {
+  padding: 10px 20px;
+  margin-left: 10px;
+}
+
+.main-content {
+  padding: 10px;
+}
+
+.demandante,
+.concurso,
+.data-homologacao,
+.validade {
+  margin-bottom: 10px;
+}
+
+.table-container {
+  width: 100%;
+  overflow: auto;
+}
+
+.table {
+  width: 10%;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 2px solid #ddd;
+  padding: 10px; /* Ajustado o padding para um valor mais adequado */
+  text-align: left;
+}
+
+th {
+  background-color: #f5f5f5;
+}
+
+.containerTable {
+  width: 1500px;
+  margin: 0 auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+p-table {
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+p-table th,
+p-table td {
+  padding: 5px;
+}
+
+p-paginator {
+  margin-top: 5px;
+}
+
+.totalVI,
+.totalCR {
+  text-align: right;
+}
+
+.cargo {
+  width: 250px;
+  text-align: left;
+  padding-right: 100px;
+}
+
+.especialidade {
+  width: 250px;
+  text-align: center;
+  padding-right: 100px;
+}
+
+.ampla,
+.amplaCR,
+.totalVI,
+.totalCR,
+.pcdVI,
+.pcdCR {
+  width: 10%;
+  text-align: center;
+}
+
+.p-button-icon-only .p-button-icon {
+  margin-right: 55px; /* Diminua o espaçamento entre os ícones */
+}
+
+.edit-icon,
+.delete-icon {
+  font-size: 1rem; /* Ajuste o tamanho dos ícones conforme a imagem */
+}
+
+.icons-container {
+  display: contents;
+  margin-right: 10px;
+  justify-content: space-between; /* Distribui os botões uniformemente */
+}
+
+
+
+
 }
