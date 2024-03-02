@@ -65,9 +65,38 @@ th {
   background-color: #f5f5f5;
 }
 
-.containerTable {
-  width: 1500px;
-  margin: 0 auto;
+.especialidade {
+  width: 15%;
+}
+
+.amplaVI{
+  width: 5%;
+}
+
+.pcdVI {
+  width: 4%;
+}
+
+.totalVI {
+  width: 4%;
+}
+
+
+.totalCR {
+  width: 4%;
+  padding: 3%;
+}
+
+.pcdCR{
+  width: 4%;
+}
+
+.amplaCR{
+  width: 5%;
+}
+
+.cargo {
+  width: 15%;
 }
 
 h2 {
@@ -75,45 +104,23 @@ h2 {
 }
 
 p-table {
-  width: 100%;
+  width: auto;
   border: 1px solid #ddd;
+  margin-top: 2px;
+  border-collapse: collapse;
+
 }
 
 p-table th,
 p-table td {
-  padding: 5px;
+  padding: 2px;
+  border-collapse: collapse;
 }
 
 p-paginator {
-  margin-top: 5px;
+  margin-top: 2px;
 }
 
-.totalVI,
-.totalCR {
-  text-align: right;
-}
-
-.cargo {
-  width: 150px;
-  text-align: left;
-  padding-right: 100px;
-}
-
-.especialidade {
-  width: 180px;
-  text-align: left;
-  padding-right: 100px;
-}
-
-.ampla,
-.amplaCR,
-.totalVI,
-.totalCR,
-.pcdVI,
-.pcdCR {
-  width: 2%;
-  text-align: left;
-}
 
 /* Adicionando estilo para o ícone de exclusão */
 .delete-icon {
@@ -213,44 +220,6 @@ p-paginator {
 .totalCR {
   text-align: right;
 }
-
-.cargo {
-  width: 250px;
-  text-align: left;
-  padding-right: 100px;
-}
-
-.especialidade {
-  width: 250px;
-  text-align: center;
-  padding-right: 100px;
-}
-
-.ampla,
-.amplaCR,
-.totalVI,
-.totalCR,
-.pcdVI,
-.pcdCR {
-  width: 10%;
-  text-align: center;
-}
-
-.p-button-icon-only .p-button-icon {
-  margin-right: 55px; /* Diminua o espaçamento entre os ícones */
-}
-
-.edit-icon,
-.delete-icon {
-  font-size: 1rem; /* Ajuste o tamanho dos ícones conforme a imagem */
-}
-
-.icons-container {
-  display: contents;
-  margin-right: 10px;
-  justify-content: space-between; /* Distribui os botões uniformemente */
-}
-
 
 
 
