@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="componentconcurso.component.css">
+<title>Document</title>
+</head>
+<body>
+
+<div class="container" body="text">
+  <div class="header">
+    <img src="/assets/logoGoiasSead.png" alt="Logo do Governo de Goiás">
+    <div class="header-text">
+      <span>SNP - Sistema Digital de Nomeação e Posse</span>
+    </div>
+  </div>
+  <div class="content">
+    <h2 class="title">CONCURSO</h2>
+  </div>
+    <div class="acoes" style="margin-bottom: 20px;">
+      <p-button label="Salvar" severity="secondary"></p-button>
+      <p-button label="Editar" severity="success"></p-button>
+      <p-button label="Suspender Concurso" severity="danger"></p-button>
+  </div>
+  <div class="informacoes">
+    <div>
+      <h3><span><strong>Secretaria de Estado da Administração - SEAD</strong><br></span></h3>
+    </div>
+    <div>
+      <h3><span><strong>EDITAL</strong><br></span></h3>
+      <span>001-2023</span>
+    </div>
+    <div>
+      <h3><span><strong>HOMOLOGAÇÂO</strong><br></span></h3>
+      <span>26/12/2023</span>
+    </div>
+    <div>
+      <h3><span><strong>VALIDADE</strong><br></span></h3>
+      <span>24 Meses</span>
+    </div>
+    <div>
+      <h3><span><strong>VALIDADE ATÈ</strong><br></span></h3>
+      <span>26/12/2025</span>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="opcoes">
+    <div>
+      <span><strong>Regionalizado:</strong> Não<br></span>
+    </div>
+    <div>
+      <span><strong>Vagas por Sexo:</strong> Não<br></span>
+    </div>
+    <div>
+      <span><strong>Reclass.até:</strong> Convocação<br></span>
+    </div>
+    <div>
+      <span><strong>Lista PCD:</strong> Separada<br></span>
+    </div>
+    <div>
+      <span><strong>Situação Concurso:</strong> Ativo<br></span>
+    </div>
+  </div>
+</div>
+<div style="margin-left: 20px;">
+  <p-table
+  [value]="tableData"
+  [paginator]="true"
+  [rows]="5"
+  [tableStyle]="{ 'min-width': '50rem' }"
+  currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+  [rowsPerPageOptions]="[5, 10, 20]"
+
+
+>
+
+<ng-template pTemplate="header">
+  <div class="acoes" style="margin-bottom: 20px;">
+    <p-button label="Salvar" severity="secondary"></p-button>
+    <p-button label="Suspender Concurso" severity="danger"></p-button>
+</div>
+<tr>
+      <tr>
+          <th style="width:38%">Cargo</th>
+          <th style="width:24%">Especialidade</th>
+          <th style="width:5%">Vagas Imediatas Ampla</th>
+          <th style="width:5%">Vagas Imediatas PCD</th>
+          <th style="width:5%">Vagas Imediatas Total</th>
+          <th style="width:5%">Vagas CR Ampla</th>
+          <th style="width:5%">Vagas CR PCD</th>
+          <th style="width:5%">Vagas CR Total</th>
+          <th style="width:2%">Total</th>
+
+      </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-row>
+    <tr>
+        <td [pEditableColumn]="row.cargo" pEditableColumnField="cargo">
+            <p-cellEditor>
+                <ng-template pTemplate="input">
+                    <input pInputText type="text" [(ngModel)]="row.cargo" />
+                </ng-template>
+                <ng-template pTemplate="output">
+                    {{ row.cargo }}
+                </ng-template>
+            </p-cellEditor>
+        </td>
+        <td [pEditableColumn]="row.especialidade" pEditableColumnField="especialidade">
+            <p-cellEditor>
+                <ng-template pTemplate="input">
+                    <input pInputText type="text" [(ngModel)]="row.especialidade" />
+                </ng-template>
+                <ng-template pTemplate="output">
+                    {{ row.especialidade }}
+                </ng-template>
+            </p-cellEditor>
+        </td>
+        <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="AmplaVI">
+            <p-cellEditor>
+                <ng-template pTemplate="input">
+                    <input pInputText type="number" [(ngModel)]="row.AmplaVI" />
+                </ng-template>
+                <ng-template pTemplate="output">
+                    {{ row.AmplaVI }}
+                </ng-template>
+            </p-cellEditor>
+        </td>
+        <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="PCDVI">
+          <p-cellEditor>
+              <ng-template pTemplate="input">
+                  <input pInputText type="number" [(ngModel)]="row.PCDVI" />
+              </ng-template>
+              <ng-template pTemplate="output">
+                  {{ row.PCDVI }}
+              </ng-template>
+          </p-cellEditor>
+      </td>
+      <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="TotalVI">
+        <p-cellEditor>
+            <ng-template pTemplate="input">
+                <input pInputText type="number" [(ngModel)]="row.TotalVI" />
+            </ng-template>
+            <ng-template pTemplate="output">
+                {{ row.TotalVI }}
+            </ng-template>
+        </p-cellEditor>
+    </td>
+    <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="AmplaCR">
+      <p-cellEditor>
+          <ng-template pTemplate="input">
+              <input pInputText type="number" [(ngModel)]="row.AmplaCR" />
+          </ng-template>
+          <ng-template pTemplate="output">
+              {{ row.AmplaCR }}
+          </ng-template>
+      </p-cellEditor>
+  </td>
+  <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="PCDCR">
+    <p-cellEditor>
+        <ng-template pTemplate="input">
+            <input pInputText type="number" [(ngModel)]="row.PCDCR" />
+        </ng-template>
+        <ng-template pTemplate="output">
+            {{ row.PCDCR }}
+        </ng-template>
+    </p-cellEditor>
+</td>
+<td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="TotalCR">
+  <p-cellEditor>
+      <ng-template pTemplate="input">
+          <input pInputText type="number" [(ngModel)]="row.TotalCR" />
+      </ng-template>
+      <ng-template pTemplate="output">
+          {{ row.TotalCR }}
+      </ng-template>
+  </p-cellEditor>
+</td>
+<td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="Total">
+  <p-cellEditor>
+      <ng-template pTemplate="input">
+          <input pInputText type="number" [(ngModel)]="row.Total" />
+      </ng-template>
+      <ng-template pTemplate="output">
+          {{ row.Total }}
+      </ng-template>
+  </p-cellEditor>
+</td>
+
+<td>
+
+</td>
+<span class="p-buttonset">
+  <button pButton type="button" icon="pi pi-pencil" class="p-button-info" (click)="editRow(row)"></button>
+  <button pButton type="button" icon="pi-exclamation-triangle" class="p-button-danger" (click)="deleteRow(row)"></button>
+</span>
+</tr>
+</ng-template>
+</p-table>
+</div>
+</body>
+
+</html>
+

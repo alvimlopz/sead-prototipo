@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterOutlet } from '@angular/router';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +15,8 @@ import {CalendarModule} from 'primeng/calendar';
 import {CheckboxModule} from 'primeng/checkbox';
 import {TableModule} from 'primeng/table';
 import {SpinnerModule} from 'primeng/spinner';
+import { ComponentconcursoComponent } from './componentconcurso/componentconcurso.component';
+
 
 
 
@@ -22,6 +25,7 @@ import {SpinnerModule} from 'primeng/spinner';
   declarations: [
     AppComponent,
     HomeComponent,
+    ComponentconcursoComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import {SpinnerModule} from 'primeng/spinner';
     CalendarModule,
     CheckboxModule,
     TableModule,
-    SpinnerModule
+    SpinnerModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

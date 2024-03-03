@@ -1,0 +1,136 @@
+
+
+@import "primeicons/primeicons.css";
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px; /* Adiciona um espaço interno ao redor do conteúdo */
+  display: flex;
+
+
+}
+
+
+.header {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #b4c8d8;
+  display: flex;
+  height: 19vh;
+  justify-content: space-between;
+}
+
+
+.header img {
+  width: 100px; /* Ajuste o tamanho do logo conforme necessário */
+}
+
+.header-text {
+  text-align: right; /* Alinha o texto à direita */
+  margin-right: 80px; /* Adiciona margem à direita para espaçamento */
+  font-weight: bold; /* Define o texto em negrito */
+}
+
+
+.main-content {
+  padding: 10px;
+}
+
+.header img {
+  float: right;
+  max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
+  width: 500px;
+  height: auto;
+  margin-left: 20px;
+}
+
+.title {
+  text-align: left;
+  padding: 15px;
+  padding: 1%; /* Alterado para uma unidade relativa */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: row; /* Alterado para linha */
+  flex-wrap: wrap; /* Permite que os elementos quebrem a linha conforme necessário */
+  align-items: center; /* Alinha os elementos verticalmente */
+}
+
+.content h3 {
+  margin-right: 20px;
+}
+
+.acoes {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end; /* Alinha os botões à direita */
+}
+
+.acoes p-button {
+  margin-left: 10px; /* Adiciona espaçamento entre os botões */
+  margin-top: 10px;
+}
+
+.acoes p-button:first-child {
+  margin-left: 10; /* Remove a margem esquerda do primeiro botão */
+}
+
+.acoes p-button:last-child {
+  margin-right: 0; /* Remove a margem direita do último botão */
+}
+
+.informacoes,
+.opcoes {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
