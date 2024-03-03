@@ -77,7 +77,8 @@
 >
 <ng-template pTemplate="header">
   <!--Botão de acicionar linhas na table-->
-  <p-button class="butaoAdd" label="Adicionar"></p-button>
+  <p-button class="butaoAdd" label="Adicionar" (click)="adicionarLinha()"></p-button>
+  <tr>
   <tr>
     <th colspan="5" style="text-align: center; height: 2px;"><p style="margin-left: 770px;">Vagas Imediatas</p></th>
     <th colspan="4" style="text-align: center; height: 2px;"><p style="margin-left: 330px;">Vagas CR</p></th>

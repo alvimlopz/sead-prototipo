@@ -9,6 +9,20 @@ import { ListTable } from '../../models/list-table';
 })
 export class HomeComponent implements OnInit {
 
+  adicionarLinha(){
+
+      this.tableData.push({
+        cargo: '',
+    especialidade: '',
+    vagasImediatasAmpla: 30,
+    vagasImediatasPCD: 1,
+    vagasImediatasTotal: 31,
+    vagasCRAmpla: 30,
+    vagasCRPCD: 1,
+    vagasCRTotal: 31,
+    total: 62
+      });
+  }
 
 
   deleteRow(row: ListTable) {
@@ -17,6 +31,8 @@ export class HomeComponent implements OnInit {
       this.tableData.splice(index, 1);
     }
   }
+
+
 
   tableData: ListTable[] = [
     {
