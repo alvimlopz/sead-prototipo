@@ -9,19 +9,18 @@ import { ListTable } from '../../models/list-table';
 })
 export class HomeComponent implements OnInit {
 
-  adicionarLinha(){
-
-      this.tableData.push({
-        cargo: '',
-    especialidade: '',
-    vagasImediatasAmpla: 30,
-    vagasImediatasPCD: 1,
-    vagasImediatasTotal: 31,
-    vagasCRAmpla: 30,
-    vagasCRPCD: 1,
-    vagasCRTotal: 31,
-    total: 62
-      });
+  addRow() {
+    // Adiciona uma nova linha com valores padrão
+    this.tableData.push({
+      cargo: "",
+      especialidade: "",
+      AmplaVI: 0,
+      PCDVI: 0,
+      TotalVI: 0,
+      AmplaCR: 0,
+      PCDCR: 0,
+      TotalCR: 0
+    });
   }
 
 
@@ -36,38 +35,35 @@ export class HomeComponent implements OnInit {
 
   tableData: ListTable[] = [
     {
-      cargo: "Analista de Gest. Governamental",
+    cargo: "Analista de Gest. Governamental",
     especialidade: "Tec. da Informação",
-    vagasImediatasAmpla: 30,
-    vagasImediatasPCD: 1,
-    vagasImediatasTotal: 31,
-    vagasCRAmpla: 30,
-    vagasCRPCD: 1,
-    vagasCRTotal: 31,
-    total: 62
+    AmplaVI: 30,
+    PCDVI: 2,
+    TotalVI: 32,
+    AmplaCR: 32,
+    PCDCR: 2,
+    TotalCR: 34,
     },
     {
       cargo: "Analista de Gest. Governamental",
-      especialidade: "Engenharia Civil",
-      vagasImediatasAmpla: 40,
-      vagasImediatasPCD: 2,
-      vagasImediatasTotal: 42,
-      vagasCRAmpla: 40,
-      vagasCRPCD: 2,
-      vagasCRTotal: 42,
-      total: 84
-    },
-    {
-      cargo: "Gestor Governamental",
-      especialidade: "Direito",
-      vagasImediatasAmpla: 35,
-      vagasImediatasPCD: 3,
-      vagasImediatasTotal: 38,
-      vagasCRAmpla: 35,
-      vagasCRPCD: 3,
-      vagasCRTotal: 38,
-      total: 76
-    }
+      especialidade: "Tec. da Informação",
+      AmplaVI: 40,
+      PCDVI: 4,
+      TotalVI: 44,
+      AmplaCR: 36,
+      PCDCR: 2,
+      TotalCR: 25,
+      },
+      {
+        cargo: "Gestor Governamental",
+        especialidade: "Direito",
+        AmplaVI: 35,
+        PCDVI: 1,
+        TotalVI: 36,
+        AmplaCR: 15,
+        PCDCR: 1,
+        TotalCR: 16,
+        },
   ];
   cols: any[] | undefined;
 
@@ -80,8 +76,8 @@ cargo: any;
 pcd: any;
 total: any;
 customers: any[] | undefined;
-i: any;
-input: any;
+
+
 
 onCheckboxChange(value: string) {
   this.regionalizado = value;
@@ -111,8 +107,11 @@ val: any;
 
   ngOnInit() {
 
+    this.tableData = this.tableData.filter(row => Object.values(row).some(value => value !== null && value !== ''));
+
     this.demandantes = [
       { demandante: 'Secretaria de Estado da Administração - SEAD' },
+      { demandante: 'Secretaria de Estado - Portal Goias' },
 
     ];
 
@@ -121,31 +120,19 @@ val: any;
     this.cols = [
       { field: 'cargo', header: 'Cargo' },
       { field: 'especialidade', header: 'Especialidade' },
-      { field: 'vagasImediatasAmpla', header: 'Vagas Imediatas<br>Ampla' },
-      { field: 'vagasImediatasPCD', header: 'Vagas Imediatas<br>PCD' },
-      { field: 'vagasImediatasTotal', header: 'Vagas Imediatas<br>Total', calculate: (data: { vagasImediatasAmpla: any; vagasImediatasPCD: any; }) => data.vagasImediatasAmpla + data.vagasImediatasPCD },
-      { field: 'vagasCRAmpla', header: 'Vagas CR<br>Ampla' },
-      { field: 'vagasCRPCD', header: 'Vagas CR<br>PCD' },
-      { field: 'vagasCRTotal', header: 'Vagas CR<br>Total', calculate: (data: { vagasCRAmpla: any; vagasCRPCD: any; }) => data.vagasCRAmpla + data.vagasCRPCD },
+      { field: 'vagasImediatasAmpla', header: 'Ampla' },
+      { field: 'vagasImediatasPCD', header: 'PCD' },
+      { field: 'vagasImediatasTotal', header: 'Total', calculate: (data: { vagasImediatasAmpla: any; vagasImediatasPCD: any; }) => data.vagasImediatasAmpla + data.vagasImediatasPCD },
+      { field: 'vagasCRAmpla', header: 'Ampla' },
+      { field: 'vagasCRPCD', header: 'PCD' },
+      { field: 'vagasCRTotal', header: 'Total', calculate: (data: { vagasCRAmpla: any; vagasCRPCD: any; }) => data.vagasCRAmpla + data.vagasCRPCD },
       { field: 'total', header: 'Total', calculate: (data: { vagasImediatasTotal: any; vagasCRTotal: any; }) => data.vagasImediatasTotal + data.vagasCRTotal }
     ];
 
-    this.addRow();
+
   }
 
-  addRow() {
-    this.tableData.push({
-      cargo: '',
-      especialidade: '',
-      vagasImediatasAmpla: 0,
-      vagasImediatasPCD: 0,
-      vagasImediatasTotal: 0,
-      vagasCRAmpla: 0,
-      vagasCRPCD: 0,
-      vagasCRTotal: 0,
-      total: 0
-    });
-  }
+
 
   }
 

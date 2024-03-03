@@ -77,22 +77,21 @@
 >
 <ng-template pTemplate="header">
   <!--Botão de acicionar linhas na table-->
-  <p-button class="butaoAdd" label="Adicionar" (click)="adicionarLinha()"></p-button>
+  <p-button class="butaoAdd" label="Adicionar" (click)="addRow()"></p-button>
   <tr>
   <tr>
-    <th colspan="5" style="text-align: center; height: 2px;"><p style="margin-left: 770px;">Vagas Imediatas</p></th>
-    <th colspan="4" style="text-align: center; height: 2px;"><p style="margin-left: 330px;">Vagas CR</p></th>
+    <th colspan="5" style="text-align: center; height: 2px;"><p style="margin-left: 400px;">Vagas Imediatas</p></th>
+    <th colspan="4" style="text-align: center; height: 2px;"><p style="margin-left: -1px;">Vagas CR</p></th>
   </tr>
         <tr>
-            <th style="width:25%">Cargo</th>
-            <th style="width:18%">Especialidade</th>
+            <th style="width:20%">Cargo</th>
+            <th style="width:35%">Especialidade</th>
             <th style="width:5%">Ampla</th>
             <th style="width:5%">PCD</th>
-            <th style="width:5%">Total</th>
-            <th style="width:20%"></th>
-            <th style="width:5%">Ampla</th>
-            <th style="width:5%">PCD</th>
-            <th style="width:5%">Total</th>
+            <th style="width:190%">Total</th>
+            <th style="width:20%">Ampla</th>
+            <th style="width:15%">PCD</th>
+            <th style="width:15%">Total</th>
 
         </tr>
     </ng-template>
@@ -118,72 +117,72 @@
                   </ng-template>
               </p-cellEditor>
           </td>
-          <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="vagasImediatasAmpla">
+          <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="AmplaVI">
               <p-cellEditor>
                   <ng-template pTemplate="input">
-                      <input pInputText type="number" [(ngModel)]="row.vagasImediatasAmpla" />
+                      <input pInputText type="number" [(ngModel)]="row.AmplaVI" />
                   </ng-template>
                   <ng-template pTemplate="output">
-                      {{ row.vagasImediatasAmpla }}
+                      {{ row.AmplaVI }}
                   </ng-template>
               </p-cellEditor>
           </td>
-          <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="vagasImediatasPCD">
+          <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="PCDVI">
             <p-cellEditor>
                 <ng-template pTemplate="input">
-                    <input pInputText type="number" [(ngModel)]="row.vagasImediatasPCD" />
+                    <input pInputText type="number" [(ngModel)]="row.PCDVI" />
                 </ng-template>
                 <ng-template pTemplate="output">
-                    {{ row.vagasImediatasPCD }}
+                    {{ row.PCDVI }}
                 </ng-template>
             </p-cellEditor>
         </td>
-        <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="vagasCRAmpla">
+        <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="TotalVI">
           <p-cellEditor>
               <ng-template pTemplate="input">
-                  <input pInputText type="number" [(ngModel)]="row.vagasCRAmpla" />
+                  <input pInputText type="number" [(ngModel)]="row.TotalVI" />
               </ng-template>
               <ng-template pTemplate="output">
-                  {{ row.vagasCRAmpla }}
+                  {{ row.TotalVI }}
               </ng-template>
           </p-cellEditor>
       </td>
-      <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="vagasCRPCD">
+      <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="AmplaCR">
         <p-cellEditor>
             <ng-template pTemplate="input">
-                <input pInputText type="number" [(ngModel)]="row.vagasCRPCD" />
+                <input pInputText type="number" [(ngModel)]="row.AmplaCR" />
             </ng-template>
             <ng-template pTemplate="output">
-                {{ row.vagasCRPCD }}
+                {{ row.AmplaCR }}
             </ng-template>
         </p-cellEditor>
     </td>
-    <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="vagasCRTotal">
+    <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="PCDCR">
       <p-cellEditor>
           <ng-template pTemplate="input">
-              <input pInputText type="number" [(ngModel)]="row.vagasCRTotal" />
+              <input pInputText type="number" [(ngModel)]="row.PCDCR" />
           </ng-template>
           <ng-template pTemplate="output">
-              {{ row.vagasCRTotal }}
+              {{ row.PCDCR }}
           </ng-template>
       </p-cellEditor>
   </td>
-  <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="vagasCRTotal">
+  <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="TotalCR">
     <p-cellEditor>
         <ng-template pTemplate="input">
-            <input pInputText type="number" [(ngModel)]="row.vagasCRTotal" />
+            <input pInputText type="number" [(ngModel)]="row.TotalCR" />
         </ng-template>
         <ng-template pTemplate="output">
-            {{ row.vagasCRTotal }}
+            {{ row.TotalCR }}
         </ng-template>
     </p-cellEditor>
-</td>
-<td>{{row.total}}</td>
+  </td>
+
 <td>
   <!-- Botão de exclusão -->
   <button pButton type="button" icon="pi pi-trash" (click)="deleteRow(row)" class="p-button-rounded p-button-danger"></button>
 </td>
-          </tr>
+</tr>
   </ng-template>
 </p-table>
 </div>

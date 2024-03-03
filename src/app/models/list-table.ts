@@ -2,12 +2,11 @@ export interface ListTable {
 
   cargo: string;
   especialidade: string;
-  vagasImediatasAmpla: number;
-  vagasImediatasPCD: number;
-  vagasImediatasTotal: number;
-  vagasCRAmpla: number;
-  vagasCRPCD: number;
-  vagasCRTotal: number;
-  total: number;
+  AmplaVI: number;
+  PCDVI: number;
+  TotalVI: number;
+  AmplaCR: number;
+  PCDCR: number;
+  TotalCR: number;
 
 }
