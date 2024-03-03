@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" body="text">
   <div class="header">
     <img src="/assets/logoGoiasSead.png" alt="Logo do Governo de Goiás">
     <div class="header-text">
@@ -31,8 +31,6 @@
       </div>
   </div>
   </div>
-
-
     <div class="checkbox">
       <div class="checkbox">
         <div class="ui-g checkbox-group">
@@ -63,68 +61,135 @@
         </div>
       </div>
     </div>
-    <div class="p-table">
-      <button class="butonADD" pButton type="button" label="Adicionar" (click)="adicionarLinha()"></button>
-      <p-table class="p-table" [value]="vagas" [columns]="cols" [scrollable]="true" scrollHeight="400px" [resizableColumns]="true"  styleClass="p-datatable-gridlines" [paginator]="true" [rows]="10" [tableStyle]="{'min-width': '50rem'}">
-        <ng-template class="linhas" pTemplate="header">
-          <tr class="linhas">
-            <th  class="linhas" class="cargo">Cargo</th>
-            <th class="especialidade">Especialidade</th>
-            <th class="tituloVI" colspan="3">Vagas Imediatas</th>
-            <th class="tituloCR" colspan="3">Vagas CR</th>
-          </tr>
-          <tr>
-            <th></th>
-            <th></th>
-            <th class="amplaVI">Ampla</th>
-            <th class="pcdVI">PCD</th>
-            <th class="totalVI">Total</th>
-            <th class="amplaCR">Ampla</th>
-            <th class="pcdCR">PCD</th>
-            <th class="totalCR">Total</th>
-          </tr>
+
+    </div>
+
+    <div style="margin-left: 20px;">
+    <p-table
+    [value]="tableData"
+    [paginator]="true"
+    [rows]="5"
+    [tableStyle]="{ 'min-width': '50rem' }"
+    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [rowsPerPageOptions]="[5, 10, 20]"
+
+
+>
+<ng-template pTemplate="header">
+  <!--Botão de acicionar linhas na table-->
+  <p-button class="butaoAdd" label="Adicionar"></p-button>
+  <tr>
+    <th colspan="5" style="text-align: center; height: 2px;"><p style="margin-left: 770px;">Vagas Imediatas</p></th>
+    <th colspan="4" style="text-align: center; height: 2px;"><p style="margin-left: 330px;">Vagas CR</p></th>
+  </tr>
+        <tr>
+            <th style="width:25%">Cargo</th>
+            <th style="width:18%">Especialidade</th>
+            <th style="width:5%">Ampla</th>
+            <th style="width:5%">PCD</th>
+            <th style="width:5%">Total</th>
+            <th style="width:20%"></th>
+            <th style="width:5%">Ampla</th>
+            <th style="width:5%">PCD</th>
+            <th style="width:5%">Total</th>
+
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-row>
+      <tr>
+          <td [pEditableColumn]="row.cargo" pEditableColumnField="cargo">
+              <p-cellEditor>
+                  <ng-template pTemplate="input">
+                      <input pInputText type="text" [(ngModel)]="row.cargo" />
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                      {{ row.cargo }}
+                  </ng-template>
+              </p-cellEditor>
+          </td>
+          <td [pEditableColumn]="row.especialidade" pEditableColumnField="especialidade">
+              <p-cellEditor>
+                  <ng-template pTemplate="input">
+                      <input pInputText type="text" [(ngModel)]="row.especialidade" />
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                      {{ row.especialidade }}
+                  </ng-template>
+              </p-cellEditor>
+          </td>
+          <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="vagasImediatasAmpla">
+              <p-cellEditor>
+                  <ng-template pTemplate="input">
+                      <input pInputText type="number" [(ngModel)]="row.vagasImediatasAmpla" />
+                  </ng-template>
+                  <ng-template pTemplate="output">
+                      {{ row.vagasImediatasAmpla }}
+                  </ng-template>
+              </p-cellEditor>
+          </td>
+          <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="vagasImediatasPCD">
+            <p-cellEditor>
+                <ng-template pTemplate="input">
+                    <input pInputText type="number" [(ngModel)]="row.vagasImediatasPCD" />
+                </ng-template>
+                <ng-template pTemplate="output">
+                    {{ row.vagasImediatasPCD }}
+                </ng-template>
+            </p-cellEditor>
+        </td>
+        <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="vagasCRAmpla">
+          <p-cellEditor>
+              <ng-template pTemplate="input">
+                  <input pInputText type="number" [(ngModel)]="row.vagasCRAmpla" />
+              </ng-template>
+              <ng-template pTemplate="output">
+                  {{ row.vagasCRAmpla }}
+              </ng-template>
+          </p-cellEditor>
+      </td>
+      <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="vagasCRPCD">
+        <p-cellEditor>
+            <ng-template pTemplate="input">
+                <input pInputText type="number" [(ngModel)]="row.vagasCRPCD" />
+            </ng-template>
+            <ng-template pTemplate="output">
+                {{ row.vagasCRPCD }}
+            </ng-template>
+        </p-cellEditor>
+    </td>
+    <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="vagasCRTotal">
+      <p-cellEditor>
+          <ng-template pTemplate="input">
+              <input pInputText type="number" [(ngModel)]="row.vagasCRTotal" />
+          </ng-template>
+          <ng-template pTemplate="output">
+              {{ row.vagasCRTotal }}
+          </ng-template>
+      </p-cellEditor>
+  </td>
+  <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="vagasCRTotal">
+    <p-cellEditor>
+        <ng-template pTemplate="input">
+            <input pInputText type="number" [(ngModel)]="row.vagasCRTotal" />
         </ng-template>
-        <ng-template  pTemplate="body" let-vaga let-i="rowIndex">
-          <tr>
-            <td class="cargo">
-              <input class="input" type="text" [(ngModel)]="vagas[i].cargo">
-            </td>
-            <td class="especialidade">
-              <input type="text" [(ngModel)]="vagas[i].especialidade">
-            </td>
-            <td class="amplaVI">
-              <input type="text" [(ngModel)]="vagas[i].amplaVI">
-            </td>
-            <td class="pcdVI">
-              <input type="text" [(ngModel)]="vagas[i].pcdVI">
-            </td>
-            <td class="totalVI">
-              <input type="text" [(ngModel)]="vagas[i].totalVI">
-            </td>
-            <td class="amplaCR">
-              <input type="text" [(ngModel)]="vagas[i].amplaCR">
-            </td>
-            <td class="pcdCR">
-              <input type="text" [(ngModel)]="vagas[i].pcdCR">
-            </td>
-            <td class="totalCR">
-              <input type="text" [(ngModel)]="vagas[i].totalCR">
-            </td>
-            <td>
-              <div class="icons-container">
-               <!--  <button style="margin-right: 10px;" pButton icon="pi pi-pencil edit-icon" (click)="editRow(i)" class="p-button-primary"></button> -->
-                <button pButton icon="pi pi-trash delete-icon" (click)="deleteRow(i)" class="p-button-danger"></button>
-              </div>
-            </td>
-          </tr>
+        <ng-template pTemplate="output">
+            {{ row.vagasCRTotal }}
         </ng-template>
-      </p-table>
-    </div>
-    </div>
-    <div class="botoes">
-      <button class="buton" pButton type="button" label="Voltar"></button>
-      <button class="buton" pButton type="button" label="Salvar"></button>
-    </div>
+    </p-cellEditor>
+</td>
+<td>{{row.total}}</td>
+<td>
+  <!-- Botão de exclusão -->
+  <button pButton type="button" icon="pi pi-trash" (click)="deleteRow(row)" class="p-button-rounded p-button-danger"></button>
+</td>
+          </tr>
+  </ng-template>
+</p-table>
+</div>
+<div class="botoes">
+  <button class="buton" pButton type="button" label="Voltar"></button>
+  <button class="buton" pButton type="button" label="Salvar"></button>
+</div>
 
 
 

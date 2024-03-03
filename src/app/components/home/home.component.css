@@ -1,15 +1,18 @@
 
 .header {
   background-color: #b4c8d8;
-  margin-bottom: 20px;
   display: flex;
   height: 19vh;
-  padding: 20px;
+  padding: 0;
   width: 100%;
-  justify-content: space-between;
   margin: 0;
+  justify-content: space-between;
+  margin: 15;
 }
 
+.butaoAdd {
+ margin-bottom: 20px;
+}
 
 .header img {
   width: 100px; /* Ajuste o tamanho do logo conforme necessário */
@@ -64,23 +67,6 @@
   margin-bottom: 10px;
 }
 
-th{
-  background-color: #e2e2e2;
-}
-
-td,
-th {
-  border: 1px solid #9e9e9e;
- width: 10%;
-}
-
-th,
-td {
-  padding: 8px; /* Ajustando o padding das células */
-  font-size: 14px; /* Ajustando o tamanho da fonte */
-  width: 1%;
-  width: 10%; /* Definindo uma largura de 10% para as células de dados */
-}
 
 .cargo,
 .especialidade {
@@ -187,17 +173,28 @@ p-paginator {
 }
 
 
+
 .totalVI,
 .totalCR {
   text-align: right;
 }
 
-.containerTable {
-  width: 8%;
-  height: 8px;
-  color: red;
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-
+.cargo-table{
+  width: 100%;
+  width: calc(25% - 25px); /* Define a largura de cada grupo de input */
+  margin-right: 10px; /* Adiciona margem à direita para espaçamento entre os grupos */
+  margin-bottom: 25px; /* Adiciona margem na parte inferior para espaçamento entre os grupos */
+  display: block; /* Torne os labels em bloco para que fiquem acima dos inputs */
+  margin-bottom: 3px; /* Adicione margem na parte inferior dos labels para espaçamento */
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 25px;
+}
 
 }

@@ -2,7 +2,6 @@
 @import url("../node_modules/primeng/resources/primeng.min.css");
 @import url("../node_modules/primeng/resources/themes/saga-blue/theme.css");
 
-
 .container {
   width: 100%;
   margin: 0 auto;
@@ -10,13 +9,38 @@
 
 }
 
+.p-table {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.p-paginator {
+  width: auto;
+  place-items: center;
+}
+.p {
+  color: rgb(104, 104, 104);
+  position: absolute;
+  top: 42%;
+  left: 47%;
+  transform: translate(-2%, -900%);
+}
+.vagasImediatas{
+  color:rgb(104, 104, 104);
+  position: absolute;
+  top: 42%;
+  left: 44%;
+  transform: translate(+1130%, -900%);
+}
+
 .header {
   display: flex;
   width: 100%;
+  padding: 0;
   align-items: center;
-  margin: 0 auto;
   width: 100%;
   height: 100vh;
+  margin: 0;
 }
 
 
@@ -54,7 +78,7 @@ input {
 
 .input-group label {
   display: block; /* Torne os labels em bloco para que fiquem acima dos inputs */
-  margin-bottom: 4px; /* Adicione margem na parte inferior dos labels para espaçamento */
+  margin-bottom: 3px; /* Adicione margem na parte inferior dos labels para espaçamento */
 }
 
 .checkbox-group p-checkbox {
@@ -73,34 +97,7 @@ input {
   margin-bottom: 20px;
 }
 
-/* CSS para a tabela */
-th, td {
-  padding: 8px; /* Adicione preenchimento interno para as células */
-  text-align: left; /* Alinhe o texto à esquerda */
-}
 
-th {
-  background-color: #a8a0a0; /* Cor de fundo para cabeçalhos */
-}
-
-/* Defina a largura das colunas */
-th:first-child, td:first-child {
-  width: 50%; /* Largura da primeira coluna */
-}
-
-th:last-child, td:last-child {
-  width: 50%; /* Largura da segunda coluna */
-}
-
-/* Adicione margens entre as colunas */
-td:first-child {
-  margin-right: 50px; /* Margem à direita para separar as colunas */
-}
-
-table {
-  border-collapse: initial;
-  border-spacing: 5px; /* Espaçamento entre as células */
-}
 
 
 

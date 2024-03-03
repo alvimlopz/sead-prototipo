@@ -9,9 +9,63 @@ import { ListTable } from '../../models/list-table';
 })
 export class HomeComponent implements OnInit {
 
+
+
+  deleteRow(row: ListTable) {
+    const index = this.tableData.indexOf(row);
+    if (index !== -1) {
+      this.tableData.splice(index, 1);
+    }
+  }
+
+  tableData: ListTable[] = [
+    {
+      cargo: "Analista de Gest. Governamental",
+    especialidade: "Tec. da Informação",
+    vagasImediatasAmpla: 30,
+    vagasImediatasPCD: 1,
+    vagasImediatasTotal: 31,
+    vagasCRAmpla: 30,
+    vagasCRPCD: 1,
+    vagasCRTotal: 31,
+    total: 62
+    },
+    {
+      cargo: "Analista de Gest. Governamental",
+      especialidade: "Engenharia Civil",
+      vagasImediatasAmpla: 40,
+      vagasImediatasPCD: 2,
+      vagasImediatasTotal: 42,
+      vagasCRAmpla: 40,
+      vagasCRPCD: 2,
+      vagasCRTotal: 42,
+      total: 84
+    },
+    {
+      cargo: "Gestor Governamental",
+      especialidade: "Direito",
+      vagasImediatasAmpla: 35,
+      vagasImediatasPCD: 3,
+      vagasImediatasTotal: 38,
+      vagasCRAmpla: 35,
+      vagasCRPCD: 3,
+      vagasCRTotal: 38,
+      total: 76
+    }
+  ];
+  cols: any[] | undefined;
+
   selectedValue: string = ""; // Variable to store the selected value
 
   regionalizado: string = "sim"; // Valor inicial
+ampla: any;
+especialidade: any;
+cargo: any;
+pcd: any;
+total: any;
+customers: any[] | undefined;
+i: any;
+input: any;
 
 onCheckboxChange(value: string) {
   this.regionalizado = value;
@@ -33,82 +87,49 @@ onCheckboxChange(value: string) {
   demandantes: any[] | undefined;
   selectedDemandante: any;
   data: ListTable[] | undefined;
-  vagas: any[] = [
-    {
-      cargo: 'Analista de Gest. Governamental',
-      especialidade: 'Téc. da Informação',
-      amplaVI: 30,
-      pcdVI: 2,
-      total: 32,
-      amplaCR: 32,
-      pcdCR: 2,
-      totalCR: 34
-    },
-    {
-      cargo: 'Analista de Gest. Governamental',
-      especialidade: 'Engenharia Civil',
-      amplaVI: 40,
-      pcd: 4, // Corrigido para pcdVI
-      total: 44,
-      amplaCR: 21,
-      pcdCR: 4,
-      totalCR: 25
-    },
-    {
-      cargo: 'Gestor Governamental',
-      especialidade: 'Direito',
-      amplaVI: 35,
-      pcd: 1, // Corrigido para pcdVI
-      total: 36,
-      amplaCR: 15,
-      pcdCR: 1,
-      totalCR: 16
-    }
-  ];
 
-  cols: any[] = [
-    { field: 'cargo', header: 'Cargo' },
-    { field: 'especialidade', header: 'Especialidade' },
-    { field: 'amplaVI', header: 'Ampla' }, // Corrigido para 'amplaVI'
-    { field: 'pcdVI', header: 'PCD' }, // Corrigido para 'pcdVI'
-    { field: 'total', header: 'Total' },
-    { field: 'amplaCR', header: 'Ampla (CR)' },
-    { field: 'pcdCR', header: 'PCD (CR)' },
-    { field: 'totalCR', header: 'Total (CR)' }
-  ];
 concurso: any;
 val: any;
 
   constructor(private primengConfig: PrimeNGConfig) { }
 
   ngOnInit() {
-    this.primengConfig.ripple = true;
 
     this.demandantes = [
       { demandante: 'Secretaria de Estado da Administração - SEAD' },
 
     ];
+
+
+
+    this.cols = [
+      { field: 'cargo', header: 'Cargo' },
+      { field: 'especialidade', header: 'Especialidade' },
+      { field: 'vagasImediatasAmpla', header: 'Vagas Imediatas<br>Ampla' },
+      { field: 'vagasImediatasPCD', header: 'Vagas Imediatas<br>PCD' },
+      { field: 'vagasImediatasTotal', header: 'Vagas Imediatas<br>Total', calculate: (data: { vagasImediatasAmpla: any; vagasImediatasPCD: any; }) => data.vagasImediatasAmpla + data.vagasImediatasPCD },
+      { field: 'vagasCRAmpla', header: 'Vagas CR<br>Ampla' },
+      { field: 'vagasCRPCD', header: 'Vagas CR<br>PCD' },
+      { field: 'vagasCRTotal', header: 'Vagas CR<br>Total', calculate: (data: { vagasCRAmpla: any; vagasCRPCD: any; }) => data.vagasCRAmpla + data.vagasCRPCD },
+      { field: 'total', header: 'Total', calculate: (data: { vagasImediatasTotal: any; vagasCRTotal: any; }) => data.vagasImediatasTotal + data.vagasCRTotal }
+    ];
+
+    this.addRow();
   }
 
-  editRow(_t85: any) {
-    throw new Error('Method not implemented.');
-  }
-
-  deleteRow(index: number) {
-    this.vagas.splice(index, 1);
-  }
-
-  adicionarLinha() {
-    this.vagas.push({
+  addRow() {
+    this.tableData.push({
       cargo: '',
       especialidade: '',
-      amplaVI: null,
-      pcdVI: null,
-      total: null,
-      amplaCR: null,
-      pcdCR: null,
-      totalCR: null
+      vagasImediatasAmpla: 0,
+      vagasImediatasPCD: 0,
+      vagasImediatasTotal: 0,
+      vagasCRAmpla: 0,
+      vagasCRPCD: 0,
+      vagasCRTotal: 0,
+      total: 0
     });
   }
 
-}
+  }
+
