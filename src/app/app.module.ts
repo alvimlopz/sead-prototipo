@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterOutlet } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms'
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +17,8 @@ import {CheckboxModule} from 'primeng/checkbox';
 import {TableModule} from 'primeng/table';
 import {SpinnerModule} from 'primeng/spinner';
 import { ComponentconcursoComponent } from './componentconcurso/componentconcurso.component';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 
 
@@ -25,7 +28,7 @@ import { ComponentconcursoComponent } from './componentconcurso/componentconcurs
   declarations: [
     AppComponent,
     HomeComponent,
-    ComponentconcursoComponent
+    ComponentconcursoComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,10 @@ import { ComponentconcursoComponent } from './componentconcurso/componentconcurs
     CheckboxModule,
     TableModule,
     SpinnerModule,
-    AppRoutingModule
+    AppRoutingModule,
+    InputNumberModule,
+    ReactiveFormsModule,
+    InputSwitchModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,105 +2,187 @@
 @import url("../node_modules/primeng/resources/primeng.min.css");
 @import url("../node_modules/primeng/resources/themes/saga-blue/theme.css");
 
-
-@import "primeicons/primeicons.css";
-
 .container {
   width: 100%;
   margin: 0 auto;
-  padding: 20px; /* Adiciona um espaço interno ao redor do conteúdo */
-
-}
-
-.p-table {
-  margin: 0 auto;
-  max-width: 800px;
-}
-
-.p-paginator {
-  width: auto;
-  place-items: center;
-}
-.p {
-  color: rgb(104, 104, 104);
-  position: absolute;
-  top: 42%;
-  left: 47%;
-  transform: translate(-2%, -900%);
-}
-.vagasImediatas{
-  color:rgb(104, 104, 104);
-  position: absolute;
-  top: 42%;
-  left: 44%;
-  transform: translate(+1130%, -900%);
+  padding: 20px;
 }
 
 .header {
   display: flex;
-  width: 100%;
-  padding: 0;
   align-items: center;
-  width: 100%;
-  height: 100vh;
-  margin: 0;
+  justify-content: space-between;
 }
 
+.checkbox-group p-checkbox {
+  margin-right: 50px; /* Adicione margem à direita para espaçamento entre os checkboxes */
+}
 
+.checkbox-group {
+  display: flex; /* Use flexbox para organizar os checkboxes dentro de cada grupo */
+  width: calc(55% - 100px); /* Define a largura de cada grupo de checkboxes (metade da largura total com margem entre os grupos) */
+  margin-right: 10px; /* Adicione margem à direita para espaçamento entre os grupos */
+  margin-bottom: 40px; /* Adicione margem na parte inferior para espaçamento entre os grupos */
+}
 
-.linha-form {
+.checkbox {
+  display: flex; /* Use flexbox para organizar os grupos de checkboxes */
+  margin-bottom: 200px;
+}
+
+.inputs,
+.table-section,
+.checkbox {
   display: flex;
-  align-items: center; /* Centraliza verticalmente os elementos */
-  margin-bottom: 20px; /* Adiciona espaço entre as linhas */
+  flex-wrap: wrap;
+  gap: 1rem; /* Espaçamento entre os elementos */
+  margin-bottom: 1rem; /* Espaçamento abaixo da seção */
 }
 
-.linha-form label {
-  width: 150px; /* Largura fixa para os rótulos */
-  margin-right: 10px; /* Adiciona espaço entre os rótulos e os campos de entrada */
+.input-group,
+.checkbox-group {
+  flex: 1 1 20%; /* Crescer, encolher e base */
+  min-width: 150px; /* Mínimo para que os elementos não fiquem muito pequenos */
 }
 
-input {
-  flex: 1; /* Ocupa todo o espaço disponível */
-  width: 190px;
+.form-group label {
+  display: block; /* garante que o label ocupe sua própria linha */
+  margin-bottom: 0.5rem; /* aumente o valor se precisar de mais espaço */
+}
 
-  justify-content: center;
+
+/* Caso os componentes do PrimeNG não estejam respeitando os estilos acima */
+.p-dropdown, input[pInputText] {
+  width: 100%; /* garante que o componente ocupe toda a largura do form-group */
+  margin-top: 0.5rem; /* cria espaço acima do componente se necessário */
+}
+
+
+.checkbox-group-vertical {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+
+.form-group.especialidade {
+ width: 250px;
+}
+
+
+
+.checkbox-group-vertical .p-checkbox {
+  margin-bottom: 0.5rem; /* Espaçamento entre os checkboxes */
+}
+
+.input-group label,
+.checkbox-group label {
+  display: block;
+  margin-bottom: 0.5rem; /* Espaçamento abaixo do label */
+
+}
+
+
+.form-row {
+  display: flex;
+  align-items: flex-end; /* Alinha os itens na parte inferior */
+  gap: 1rem; /* Espaço entre os campos */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem; /* Espaço abaixo de cada campo */
+  margin-left: 10px;
+}
+
+.form-group-button {
+  /* Se os campos de input têm bordas ou padding que os fazem parecer mais altos, você pode ajustar o alinhamento vertical aqui */
+  display: flex;
+  align-items: flex-end; /* Alinha o botão na parte inferior */
+  padding-bottom: 0.950rem; /* Ajuste para coincidir com o padding dos inputs */
+  margin-left: 0.50rem;
 }
 
 .inputs {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 25px;
 }
+
 
 .input-group {
-  width: 100%;
-  width: calc(25% - 25px); /* Define a largura de cada grupo de input */
-  margin-right: 10px; /* Adiciona margem à direita para espaçamento entre os grupos */
-  margin-bottom: 25px; /* Adiciona margem na parte inferior para espaçamento entre os grupos */
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  width: calc(50% - 0.5rem); /* Define a largura de cada grupo de input */
 }
 
-.input-group label {
-  display: block; /* Torne os labels em bloco para que fiquem acima dos inputs */
-  margin-bottom: 3px; /* Adicione margem na parte inferior dos labels para espaçamento */
-}
-
-.checkbox-group p-checkbox {
-  margin-right: 80px; /* Adicione margem à direita para espaçamento entre os checkboxes */
-}
-
-.checkbox-group {
-  display: flex; /* Use flexbox para organizar os checkboxes dentro de cada grupo */
-  width: calc(50% - 10px); /* Define a largura de cada grupo de checkboxes (metade da largura total com margem entre os grupos) */
-  margin-right: 10px; /* Adicione margem à direita para espaçamento entre os grupos */
-  margin-bottom: 10px; /* Adicione margem na parte inferior para espaçamento entre os grupos */
-}
-
-.checkbox {
-  display: flex; /* Use flexbox para organizar os grupos de checkboxes */
-  margin-bottom: 20px;
+.input-field {
+  flex: 1; /* Ocupa todo o espaço disponível */
+  margin-left: 2.8rem; /* Adiciona espaço entre o rótulo e o input */
 }
 
 
 
+input, p-dropdown, p-calendar {
+  width: 100%; /* Ocupa todo o espaço disponível */
+}
 
+label {
+  width: 150px; /* Largura fixa para os rótulos */
+  margin-right: 1rem; /* Adiciona espaço entre os rótulos e os inputs */
+}
+
+
+/* Classe para o último form-group da primeira seção para adicionar margem extra */
+.form-group.last-of-section {
+  margin-right: 5rem; /* Ou o espaço que você desejar para separar dos demais campos */
+}
+
+/* Correção para inputs numéricos */
+.custom-input p-inputNumber,
+input[type="number"] {
+  width: 70%;
+  display: flex;
+}
+
+/* Tabela e paginação */
+.p-table,
+.p-paginator {
+  width: 100%; /* Ocupar toda a largura */
+}
+
+/* Botão */
+button {
+  white-space: nowrap; /* Evita que o texto do botão quebre em várias linhas */
+  padding: 0.5rem 1rem;
+  height: 38px;
+}
+
+
+
+/* Estilização específica para elementos PrimeNG */
+p-dropdown {
+  width: 100%; /* Dropdown ocupa toda a largura disponível */
+
+}
+
+/* Corrigindo posições absolutas que podem ter sido mal interpretadas */
+.header-text, .vagasImediatas, .p {
+  position: relative;
+  transform: none;
+}
+
+/* Ajuste geral de estilos */
+body, .p-table, .p-paginator, .inputs, .checkbox-group, .table-section {
+  font-family: 'Arial', sans-serif; /* Ou outra fonte de sua preferência */
+  color: #666; /* Cor de texto padrão */
+  margin-left: 10px;
+}
+
+.disabled-row {
+  background-color: #e0e0e0; /* Escolha uma cor de cinza que você prefira */
+  color: #a0a0a0; /* Cor do texto se necessário */
+  /* Não adicione pointer-events: none para permitir interações com o switch */
+  opacity: 0.6; /* Torna a linha translúcida (opcional) */
+}
 

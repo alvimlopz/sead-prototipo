@@ -8,5 +8,6 @@ export interface ListTable {
   AmplaCR: number;
   PCDCR: number;
   TotalCR: number;
+  status: boolean;
 
 }

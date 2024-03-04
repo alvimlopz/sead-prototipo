@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
 import { ListTable } from '../../models/list-table';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -9,21 +10,42 @@ import { ListTable } from '../../models/list-table';
 })
 export class HomeComponent implements OnInit {
 
+onSave() {
+throw new Error('Method not implemented.');
+}
+
+  vagasForm: FormGroup;
+  cargos: any[] | undefined;
+  especialidades: any[] | undefined;
+
+
+  toggleRowStatus(row: any) {
+    // Este método será chamado sempre que o switch for alternado
+    // Não é necessário fazer mais nada se a sua única ação é aplicar a classe CSS
+  }
+
+  value4: number = 50;
+
   addRow() {
     // Adiciona uma nova linha com valores padrão
     this.tableData.push({
-      cargo: "",
-      especialidade: "",
-      AmplaVI: 0,
-      PCDVI: 0,
-      TotalVI: 0,
-      AmplaCR: 0,
-      PCDCR: 0,
-      TotalCR: 0
+      cargo: "Analista de Gest. Governamental",
+      especialidade: "tec. da informação",
+      AmplaVI: 11,
+      PCDVI: 11,
+      TotalVI: 11,
+      AmplaCR: 11,
+      PCDCR: 11,
+      TotalCR: 11,
+      status: true
     });
   }
 
+  editMode: boolean = true;
 
+  toggleEditMode() {
+    this.editMode = !this.editMode;
+  }
   deleteRow(row: ListTable) {
     const index = this.tableData.indexOf(row);
     if (index !== -1) {
@@ -43,6 +65,7 @@ export class HomeComponent implements OnInit {
     AmplaCR: 32,
     PCDCR: 2,
     TotalCR: 34,
+    status: true
     },
     {
       cargo: "Analista de Gest. Governamental",
@@ -53,6 +76,7 @@ export class HomeComponent implements OnInit {
       AmplaCR: 36,
       PCDCR: 2,
       TotalCR: 25,
+      status: true
       },
       {
         cargo: "Gestor Governamental",
@@ -63,6 +87,7 @@ export class HomeComponent implements OnInit {
         AmplaCR: 15,
         PCDCR: 1,
         TotalCR: 16,
+        status: true
         },
   ];
   cols: any[] | undefined;
@@ -96,22 +121,61 @@ onCheckboxChange(value: string) {
   products: any[] | undefined;
   rangeDates: any;
   dataHomologacao: any;
+
   demandantes: any[] | undefined;
   selectedDemandante: any;
+
+  //cargos: any[] | undefined;
+  selecionarCargos: any;
+
+  tipoCargo: any[] | undefined;
+  selecionarTipoCargos: any;
+
   data: ListTable[] | undefined;
 
 concurso: any;
 val: any;
 
-  constructor(private primengConfig: PrimeNGConfig) { }
+  constructor(private primengConfig: PrimeNGConfig, private fb: FormBuilder) {
+    this.vagasForm = this.fb.group({
+      cargo: [''],
+      especialidade: [''],
+      vagasImediatasAmpla: [''],
+      vagasImediatasPCD: [''],
+      vagasCRAmpla: [''],
+      vagasCRPCD: ['']
+    });
+  }
 
   ngOnInit() {
+
+
+
+    this.especialidades = [
+      { name: 'Tec. da Informação', code: 'TI' },
+    ];
+
+    this.cargos = [
+      { name: 'Analista de Gest. Governamental', code: 'AGG' },
+    ];
 
     this.tableData = this.tableData.filter(row => Object.values(row).some(value => value !== null && value !== ''));
 
     this.demandantes = [
       { demandante: 'Secretaria de Estado da Administração - SEAD' },
       { demandante: 'Secretaria de Estado - Portal Goias' },
+
+    ];
+
+//    this.cargos = [
+//      { cargos: 'Analista de Gest. Governamental' },
+//      { cargos: 'Analista de Requisitos' },
+
+ //   ];
+
+    this.tipoCargo = [
+      { tipoCargo: 'Analista de Gest. Governamental' },
+      { tipoCargo: 'Analista de Requisitos' },
 
     ];
 
@@ -135,4 +199,6 @@ val: any;
 
 
   }
+
+
 

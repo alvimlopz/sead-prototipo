@@ -10,9 +10,7 @@
   margin: 15;
 }
 
-.butaoAdd {
- margin-bottom: 20px;
-}
+
 
 .header img {
   width: 100px; /* Ajuste o tamanho do logo conforme necessário */
@@ -60,56 +58,11 @@
   padding: 10px;
 }
 
-.demandante,
-.concurso,
-.data-homologacao,
-.validade {
-  margin-bottom: 10px;
-}
-
-
-.cargo,
-.especialidade {
-  width: 15%; /* Definindo a largura das colunas Cargo e Especialidade */
-}
-
-.amplaVI,
-.pcdVI,
-.totalVI,
-.amplaCR,
-.pcdCR,
-.totalCR {
-  width: 2%;
-}
-
-
-.butonADD{
-  font-size: 12px; /* Tamanho da fonte */
-
-  width: 100px; /* Defina o tamanho desejado */
-  height: 30px; /* Defina a altura desejada */
-}
-
 
 p-paginator {
   margin-top: 2px;
 }
 
-.custom-dropdown {
-  width: 300px; /* Defina o tamanho desejado */
-}
-
-/* Adicionando estilo para o ícone de exclusão */
-.delete-icon {
-  font-size: 1.5rem; /* Tamanho do ícone */
-  color: red; /* Cor do ícone */
-  .container {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-}
 
 .header {
   background-color: #b4c8d8;
@@ -123,78 +76,24 @@ p-paginator {
   margin-left: 20px;
 }
 
-.title {
-  text-align: left;
-  padding: 15px;
-}
-
-.botoes {
-  text-align: right;
-  margin-top: 10px;
-}
-
-.buton {
-  padding: 10px 20px;
-  margin-left: 10px;
-}
-
-
-.demandante,
-.concurso,
-.data-homologacao,
-.validade {
-  margin-bottom: 10px;
-}
-
-h2 {
-  text-align: center;
-}
-
-
 
 p-paginator {
   width: 10%;
 
 }
 
-.custom-spinner .ui-spinner-input {
-  width: 60px; /* Defina a largura desejada para o campo de entrada */
-  height: 300px; /* Defina a altura desejada para o campo de entrada */
-  font-size: 18px; /* Defina o tamanho da fonte desejado */
-  padding: 40px; /* Adicione preenchimento interno */
-  border: 100px solid #ced4da; /* Adicione uma borda */
-  border-radius: 400px; /* Adicione bordas arredondadas */
-}
-
-.custom-spinner .ui-spinner-button {
-  width: 300px; /* Defina a largura desejada para os botões de incremento e decremento */
-  height: 30px; /* Defina a altura desejada para os botões de incremento e decremento */
-  font-size: 14px; /* Defina o tamanho da fonte desejado para os botões de incremento e decremento */
-}
 
 
 
-.totalVI,
-.totalCR {
-  text-align: right;
-}
 
-.container {
-  width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-}
 
-.cargo-table{
-  width: 100%;
-  width: calc(25% - 25px); /* Define a largura de cada grupo de input */
-  margin-right: 10px; /* Adiciona margem à direita para espaçamento entre os grupos */
-  margin-bottom: 25px; /* Adiciona margem na parte inferior para espaçamento entre os grupos */
-  display: block; /* Torne os labels em bloco para que fiquem acima dos inputs */
-  margin-bottom: 3px; /* Adicione margem na parte inferior dos labels para espaçamento */
-  display: flex;
-  flex-wrap: wrap;
-  padding-left: 25px;
-}
 
-}
+
+
+
+
+
+
+
+
+

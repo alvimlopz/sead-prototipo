@@ -8,28 +8,32 @@
   <h2 class="title">CADASTRAR CONCURSO</h2>
   <div class="inputs">
     <div class="input-group">
-      <label for="demandante">Demandante</label>
-      <div class="card flex justify-content-center">
-        <p-dropdown [options]="demandantes" [showClear]="true" [(ngModel)]="selectedDemandante" optionLabel="demandante"></p-dropdown>
-    </div>
-    </div>
-    <div class="input-group">
-      <label for="concurso">Concurso</label>
-      <input type="text" pInputText id="concurso" name="concurso" [(ngModel)]="concurso">
-    </div>
-    <div class="input-group">
-      <label for="dataHomologacao">Data Homologação</label>
-      <p-calendar [(ngModel)]="dataHomologacao"></p-calendar>
-    </div>
-    <div class="input-group">
-      <label for="validade">Validade (Meses)</label>
-      <input type="number" pInputText id="validade" name="validade" [(ngModel)]="validade" min="1" max="12" required>
-      <div *ngIf="isInvalidInput()">
-          <small>
-              Valor deve estar entre 1 e 12.
-          </small>
+      <div class="input-field">
+        <p-dropdown [options]="demandantes" [showClear]="true" [(ngModel)]="selectedDemandante" optionLabel="demandante"  placeholder="Demandante"></p-dropdown>
       </div>
+    </div>
+    <div class="input-group">
+      <div class="input-field">
+        <input type="text" pInputText id="concurso" name="concurso" [(ngModel)]="concurso" placeholder="Numero do concurso">
+      </div>
+    </div>
+    <div class="input-group">
+      <div class="input-field">
+        <p-calendar [(ngModel)]="dataHomologacao" placeholder="Data Homologação"></p-calendar>
+      </div>
+    </div>
+    <div class="input-group">
+      <div class="input-field">
+        <input type="number" pInputText id="validade" name="validade" [(ngModel)]="validade" min="1" max="24" required placeholder="Validade (Meses)">
+        <div *ngIf="isInvalidInput()">
+          <small>
+            Valor deve estar entre 1 e 24.
+          </small>
+        </div>
+      </div>
+    </div>
   </div>
+
   </div>
     <div class="checkbox">
       <div class="checkbox">
@@ -38,31 +42,73 @@
             <p>Regionalizado</p>
 
             <p-checkboxGroup name="regionalizado" [(ngModel)]="selectedValue">
+              <div class="checkbox-group-vertical">
               <p-checkbox name="group1" value="sim" label="Sim" [(ngModel)]="regionalizado" (change)="onCheckboxChange('sim')"></p-checkbox>
               <p-checkbox name="group1" value="nao" label="Não" [(ngModel)]="regionalizado" (change)="onCheckboxChange('nao')"></p-checkbox>
+            </div>
             </p-checkboxGroup>
           </div>
           <div>
             <p>Vagas Sexo</p>
-            <p-checkbox name="group1" value="Option 2" label="Sim"></p-checkbox>
-            <p-checkbox name="group1" value="Option 2" label="Não"></p-checkbox>
+            <div class="checkbox-group-vertical">
+              <p-checkbox label="Sim" value="sim" ></p-checkbox>
+              <p-checkbox label="Não" value="nao" ></p-checkbox>
+            </div>
           </div>
           <div>
             <p>Reclass. até</p>
+            <div class="checkbox-group-vertical">
             <p-checkbox name="group1" value="Option 3" label="Não Permitido"></p-checkbox>
             <p-checkbox name="group1" value="Option 3" label="Convocação"></p-checkbox>
             <p-checkbox name="group1" value="Option 3" label="Nomeação"></p-checkbox>
           </div>
+          </div>
           <div>
             <p>Lista PCD</p>
+            <div class="checkbox-group-vertical">
             <p-checkbox name="group1" value="Option 4" label="Geral"></p-checkbox>
             <p-checkbox name="group1" value="Option 4" label="Separada"></p-checkbox>
+          </div>
           </div>
         </div>
       </div>
     </div>
 
-    </div>
+  <!--O codigo da imagem vai fica aqui a baixo-->
+  <div class="table-section">
+    <form [formGroup]="vagasForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cargo">Cargo</label>
+          <p-dropdown [options]="cargos" optionLabel="name" [showClear]="true" placeholder="Selecione um cargo" formControlName="cargo"></p-dropdown>
+        </div>
+        <div class="form-group last-of-section">
+          <label for="especialidade">Especialidade</label>
+          <p-dropdown [options]="especialidades" optionLabel="name" [showClear]="true" placeholder="Selecione uma especialidade" formControlName="especialidade"></p-dropdown>
+        </div>
+        <div class="form-group">
+          <label  for="vagasImediatasAmpla">Vagas Imediatas Ampla</label>
+          <input type="number" pInputText formControlName="vagasImediatasAmpla"/>
+        </div>
+        <div class="form-group">
+          <label for="vagasImediatasPCD">Vagas Imediatas PCD</label>
+          <input type="number" pInputText formControlName="vagasImediatasPCD"/>
+        </div>
+        <div class="form-group">
+          <label for="vagasCRAmpla">Vagas CR Ampla</label>
+          <input type="number" pInputText formControlName="vagasCRAmpla"/>
+        </div>
+        <div class="form-group">
+          <label for="vagasCRPCD">Vagas CR PCD</label>
+          <input type="number" pInputText formControlName="vagasCRPCD"/>
+        </div>
+        <div class="form-group-button">
+          <button pButton type="button" (click)="addRow()">Adicionar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
 
     <div style="margin-left: 20px;">
     <p-table
@@ -77,36 +123,33 @@
 >
 <ng-template pTemplate="header">
   <!--Botão de acicionar linhas na table-->
-  <p-button class="butaoAdd" label="Adicionar" (click)="addRow()"></p-button>
   <tr>
-  <tr>
-    <th colspan="5" style="text-align: center; height: 2px;"><p style="margin-left: 400px;">Vagas Imediatas</p></th>
-    <th colspan="4" style="text-align: center; height: 2px;"><p style="margin-left: -1px;">Vagas CR</p></th>
-  </tr>
         <tr>
-            <th style="width:20%">Cargo</th>
-            <th style="width:35%">Especialidade</th>
+            <th style="width:25%">Cargo</th>
+            <th style="width:40%">Especialidade</th>
             <th style="width:5%">Ampla</th>
             <th style="width:5%">PCD</th>
-            <th style="width:190%">Total</th>
-            <th style="width:20%">Ampla</th>
-            <th style="width:15%">PCD</th>
-            <th style="width:15%">Total</th>
+            <th style="width:5%">Total</th>
+            <th style="width:5%">Ampla</th>
+            <th style="width:5%">PCD</th>
+            <th style="width:5%">Total</th>
+            <th style="width:5%">Status</th>
+            <th style="">Ações</th>
 
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-row>
-      <tr>
-          <td [pEditableColumn]="row.cargo" pEditableColumnField="cargo">
-              <p-cellEditor>
-                  <ng-template pTemplate="input">
-                      <input pInputText type="text" [(ngModel)]="row.cargo" />
-                  </ng-template>
-                  <ng-template pTemplate="output">
-                      {{ row.cargo }}
-                  </ng-template>
-              </p-cellEditor>
-          </td>
+      <tr [ngClass]="{'disabled-row': !row.status}">
+        <td [pEditableColumn]="row.cargo" pEditableColumnField="cargo" [ngClass]="{'disabled-cell': row.status}">
+          <p-cellEditor>
+            <ng-template pTemplate="input">
+              <input pInputText type="text" [(ngModel)]="row.cargo" [disabled]="row.status" />
+            </ng-template>
+            <ng-template pTemplate="output">
+              {{ row.cargo }}
+            </ng-template>
+          </p-cellEditor>
+        </td>
           <td [pEditableColumn]="row.especialidade" pEditableColumnField="especialidade">
               <p-cellEditor>
                   <ng-template pTemplate="input">
@@ -177,17 +220,21 @@
         </ng-template>
     </p-cellEditor>
   </td>
+  <td>
+    <p-inputSwitch [(ngModel)]="row.status"></p-inputSwitch> <!-- Adicionando o switch para o status -->
+  </td>
 
 <td>
   <!-- Botão de exclusão -->
   <button pButton type="button" icon="pi pi-trash" (click)="deleteRow(row)" class="p-button-rounded p-button-danger"></button>
+
 </td>
 </tr>
   </ng-template>
 </p-table>
 </div>
 <div class="botoes">
-  <button class="buton" pButton type="button" label="Voltar"></button>
+  <p-button label="Suspender Concurso" severity="danger"></p-button>
   <button class="buton" pButton type="button" label="Salvar"></button>
 </div>
 
