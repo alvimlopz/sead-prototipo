@@ -37,6 +37,7 @@ throw new Error('Method not implemented.');
       AmplaCR: 11,
       PCDCR: 11,
       TotalCR: 11,
+      totalTD: 66,
       status: true
     });
   }
@@ -65,6 +66,7 @@ throw new Error('Method not implemented.');
     AmplaCR: 32,
     PCDCR: 2,
     TotalCR: 34,
+    totalTD: 61,
     status: true
     },
     {
@@ -76,6 +78,7 @@ throw new Error('Method not implemented.');
       AmplaCR: 36,
       PCDCR: 2,
       TotalCR: 25,
+      totalTD: 63,
       status: true
       },
       {
@@ -87,6 +90,7 @@ throw new Error('Method not implemented.');
         AmplaCR: 15,
         PCDCR: 1,
         TotalCR: 16,
+        totalTD: 21,
         status: true
         },
   ];

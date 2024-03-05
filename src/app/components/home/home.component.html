@@ -6,7 +6,7 @@
     </div>
   </div>
   <h2 class="title">CADASTRAR CONCURSO</h2>
-  <div class="inputs">
+  <div class="flex-container">
     <div class="input-group">
       <div class="input-field">
         <p-dropdown [options]="demandantes" [showClear]="true" [(ngModel)]="selectedDemandante" optionLabel="demandante"  placeholder="Demandante"></p-dropdown>
@@ -39,8 +39,7 @@
       <div class="checkbox">
         <div class="ui-g checkbox-group">
           <div>
-            <p>Regionalizado</p>
-
+            <p><strong>Regionalizado</strong></p>
             <p-checkboxGroup name="regionalizado" [(ngModel)]="selectedValue">
               <div class="checkbox-group-vertical">
               <p-checkbox name="group1" value="sim" label="Sim" [(ngModel)]="regionalizado" (change)="onCheckboxChange('sim')"></p-checkbox>
@@ -49,14 +48,14 @@
             </p-checkboxGroup>
           </div>
           <div>
-            <p>Vagas Sexo</p>
+            <p><strong>Vagas Sexo</strong></p>
             <div class="checkbox-group-vertical">
               <p-checkbox label="Sim" value="sim" ></p-checkbox>
               <p-checkbox label="Não" value="nao" ></p-checkbox>
             </div>
           </div>
           <div>
-            <p>Reclass. até</p>
+            <p><strong>Reclass. até</strong></p>
             <div class="checkbox-group-vertical">
             <p-checkbox name="group1" value="Option 3" label="Não Permitido"></p-checkbox>
             <p-checkbox name="group1" value="Option 3" label="Convocação"></p-checkbox>
@@ -64,7 +63,7 @@
           </div>
           </div>
           <div>
-            <p>Lista PCD</p>
+            <p><strong>Lista PCD</strong></p>
             <div class="checkbox-group-vertical">
             <p-checkbox name="group1" value="Option 4" label="Geral"></p-checkbox>
             <p-checkbox name="group1" value="Option 4" label="Separada"></p-checkbox>
@@ -79,27 +78,27 @@
     <form [formGroup]="vagasForm">
       <div class="form-row">
         <div class="form-group">
-          <label for="cargo">Cargo</label>
+          <label  for="cargo"><strong>Cargo</strong></label>
           <p-dropdown [options]="cargos" optionLabel="name" [showClear]="true" placeholder="Selecione um cargo" formControlName="cargo"></p-dropdown>
         </div>
         <div class="form-group last-of-section">
-          <label for="especialidade">Especialidade</label>
+          <label for="especialidade"><strong>Especialidade</strong></label>
           <p-dropdown [options]="especialidades" optionLabel="name" [showClear]="true" placeholder="Selecione uma especialidade" formControlName="especialidade"></p-dropdown>
         </div>
         <div class="form-group">
-          <label  for="vagasImediatasAmpla">Vagas Imediatas Ampla</label>
+          <label  for="vagasImediatasAmpla"><strong>Vagas Imediatas Ampla</strong></label>
           <input type="number" pInputText formControlName="vagasImediatasAmpla"/>
         </div>
         <div class="form-group">
-          <label for="vagasImediatasPCD">Vagas Imediatas PCD</label>
+          <label for="vagasImediatasPCD"><strong>Vagas Imediatas PCD</strong></label>
           <input type="number" pInputText formControlName="vagasImediatasPCD"/>
         </div>
         <div class="form-group">
-          <label for="vagasCRAmpla">Vagas CR Ampla</label>
+          <label for="vagasCRAmpla"><strong>Vagas CR Ampla</strong></label>
           <input type="number" pInputText formControlName="vagasCRAmpla"/>
         </div>
         <div class="form-group">
-          <label for="vagasCRPCD">Vagas CR PCD</label>
+          <label for="vagasCRPCD"><strong>Vagas CR PCD</strong></label>
           <input type="number" pInputText formControlName="vagasCRPCD"/>
         </div>
         <div class="form-group-button">
@@ -127,11 +126,12 @@
         <tr>
             <th style="width:25%">Cargo</th>
             <th style="width:40%">Especialidade</th>
-            <th style="width:5%">Ampla</th>
-            <th style="width:5%">PCD</th>
-            <th style="width:5%">Total</th>
-            <th style="width:5%">Ampla</th>
-            <th style="width:5%">PCD</th>
+            <th style="width:5%">Vagas Imediatas Ampla</th>
+            <th style="width:5%">Vagas Imediatas PCD</th>
+            <th style="width:5%">Vagas Imediatas Total</th>
+            <th style="width:5%">Vagas CR Ampla</th>
+            <th style="width:5%">Vagas CR PCD</th>
+            <th style="width:5%">Vagas CR Total</th>
             <th style="width:5%">Total</th>
             <th style="width:5%">Status</th>
             <th style="">Ações</th>
@@ -217,6 +217,16 @@
         </ng-template>
         <ng-template pTemplate="output">
             {{ row.TotalCR }}
+        </ng-template>
+    </p-cellEditor>
+  </td>
+  <td [pEditableColumn]="row.vagasImediatasAmpla" pEditableColumnField="totalTD">
+    <p-cellEditor>
+        <ng-template pTemplate="input">
+            <input pInputText type="number" [(ngModel)]="row.totalTD" />
+        </ng-template>
+        <ng-template pTemplate="output">
+            {{ row.totalTD }}
         </ng-template>
     </p-cellEditor>
   </td>
