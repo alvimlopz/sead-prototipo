@@ -116,18 +116,24 @@
 
 }
 
+.input-group:last-child {
+  margin-right: 0; /* Remove a margem do último elemento para que não haja espaço extra no final */
+}
 
 .input-group {
   display: flex;
   align-items: center;
   margin-bottom: 1rem;
   width: calc(50% - 0.9rem); /* Define a largura de cada grupo de input */
+  margin-right: 20px;
+  flex-grow: 1;
 }
 
 .input-field {
   flex: 1 ; /* Ocupa todo o espaço disponível */
   margin-left: 2.9rem; /* Adiciona espaço entre o rótulo e o input */
   margin-bottom: 10px;
+  max-width: 300px;
 }
 
 
@@ -170,7 +176,7 @@ button {
 .flex-container {
   display: flex;
   align-items: center; /* Isso alinhará os elementos verticalmente no meio */
-  justify-content: space-between; /* Isso distribuirá o espaço entre os elementos uniformemente */
+  justify-content: flex-start; /* Isso distribuirá o espaço entre os elementos uniformemente */
 }
 
 /* Estilização específica para elementos PrimeNG */

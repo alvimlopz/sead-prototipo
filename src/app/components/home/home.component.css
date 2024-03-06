@@ -1,6 +1,6 @@
 
 .header {
-  background-color: #b4c8d8;
+  background-color: #00695F;
   display: flex;
   height: 19vh;
   padding: 0;
@@ -65,7 +65,7 @@ p-paginator {
 
 
 .header {
-  background-color: #b4c8d8;
+  background-color: #00695F;
   padding: 80px;
 }
 

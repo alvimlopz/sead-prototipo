@@ -30,7 +30,7 @@ throw new Error('Method not implemented.');
     // Adiciona uma nova linha com valores padrão
     this.tableData.push({
       cargo: "Analista de Gest. Governamental",
-      especialidade: "tec. da informação",
+      especialidade: "",
       AmplaVI: 11,
       PCDVI: 11,
       TotalVI: 11,
