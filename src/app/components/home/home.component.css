@@ -1,42 +1,11 @@
 
-.header {
-  background-color: #00695F;
-  display: flex;
-  height: 19vh;
-  padding: 0;
-  width: 100%;
-  margin: 0;
-  justify-content: space-between;
-  margin: 15;
-}
 
-
-
-.header img {
-  width: 100px; /* Ajuste o tamanho do logo conforme necessário */
-}
-
-.header-text {
-  text-align: right; /* Alinha o texto à direita */
-  margin-right: 80px; /* Adiciona margem à direita para espaçamento */
-  font-weight: bold; /* Define o texto em negrito */
-}
-
-.header-text span {
-  font-size: 18px; /* Tamanho da fonte */
-}
 
 .main-content {
   padding: 10px;
 }
 
-.header img {
-  float: right;
-  max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
-  width: 500px;
-  height: auto;
-  margin-left: 20px;
-}
+
 
 .title {
   text-align: left;
@@ -64,17 +33,8 @@ p-paginator {
 }
 
 
-.header {
-  background-color: #00695F;
-  padding: 80px;
-}
 
-.header img {
-  float: right;
-  width: 500px;
-  height: auto;
-  margin-left: 20px;
-}
+
 
 
 p-paginator {

@@ -19,6 +19,7 @@ import {SpinnerModule} from 'primeng/spinner';
 import { ComponentconcursoComponent } from './componentconcurso/componentconcurso.component';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { HeaderComponent } from './components/header/header.component';
 
 
 
@@ -29,6 +30,7 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     AppComponent,
     HomeComponent,
     ComponentconcursoComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

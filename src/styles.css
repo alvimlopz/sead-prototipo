@@ -2,16 +2,12 @@
 @import url("../node_modules/primeng/resources/primeng.min.css");
 @import url("../node_modules/primeng/resources/themes/saga-blue/theme.css");
 
+
+
 .container {
   width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  margin: 0;
+  padding: 0;
 }
 
 .checkbox-group p-checkbox {
@@ -56,6 +52,7 @@
   margin-top: 10px;
 
 }
+
 
 
 /* Caso os componentes do PrimeNG não estejam respeitando os estilos acima */
@@ -113,7 +110,6 @@
 .inputs {
   display: flex;
   flex-wrap: wrap;
-
 }
 
 .input-group:last-child {
@@ -185,11 +181,6 @@ p-dropdown {
 
 }
 
-/* Corrigindo posições absolutas que podem ter sido mal interpretadas */
-.header-text, .vagasImediatas, .p {
-  position: relative;
-  transform: none;
-}
 
 /* Ajuste geral de estilos */
 body, .p-table, .p-paginator, .inputs, .checkbox-group, .table-section {
